@@ -1,0 +1,9 @@
+{
+  "id": "blog-seo",
+  "name": "SEO Blog & Landing Pages",
+  "category": "Content",
+  "description": "Generate SEO blog posts and local landing pages that rank and convert.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice", "key-messaging"],
+  "outputs": ["blog posts", "landing pages", "meta titles", "meta descriptions", "outlines"]
+}

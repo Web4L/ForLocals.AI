@@ -1,0 +1,28 @@
+{
+  "id": "business-slug",
+  "name": "Business Name",
+  "legalName": "",
+  "location": "City, ST",
+  "tagline": "",
+  "positioning": "One paragraph: who you are, who you serve, and why you're different.",
+  "awards": [],
+  "primaryOffer": {
+    "name": "",
+    "type": "",
+    "ctaKeyword": "",
+    "ctaStyle": ""
+  },
+  "signatureMethod": "",
+  "colors": {
+    "primary": "#000000",
+    "accent": "#ffffff"
+  },
+  "fonts": {
+    "heading": "",
+    "body": ""
+  },
+  "platforms": {
+    "primary": "",
+    "secondary": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "proposals",
+  "name": "Proposals & Quotes",
+  "category": "Sales",
+  "description": "Generate proposals, quotes, and estimates in the business's voice and branding.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice", "primaryOffer"],
+  "outputs": ["proposals", "quotes", "estimates"]
+}

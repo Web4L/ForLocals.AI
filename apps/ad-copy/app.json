@@ -1,0 +1,9 @@
+{
+  "id": "ad-copy",
+  "name": "Ad Copy",
+  "category": "Advertising",
+  "description": "Produce paid ad copy variations for Meta and Google tied to the primary offer.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice", "key-messaging", "primaryOffer"],
+  "outputs": ["headlines", "primary text", "ad variations", "creative briefs"]
+}

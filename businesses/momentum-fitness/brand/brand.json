@@ -1,0 +1,36 @@
+{
+  "id": "momentum-fitness",
+  "name": "Momentum Fitness",
+  "legalName": "Momentum Proactive Health & Fitness",
+  "location": "Pantego, TX",
+  "tagline": "Where movement and medicine collide.",
+  "positioning": "Clinical-grade strength training, rehabilitation, and small-group coaching. The smart, principle-based fitness option that teaches the physics of movement so results last. Not a generic big-box gym.",
+  "awards": [
+    "Living Magazine \"Best of\" Readers' Choice 2024",
+    "Living Magazine \"Best of\" Readers' Choice 2025",
+    "Featured in 360 West"
+  ],
+  "primaryOffer": {
+    "name": "Physics 101",
+    "type": "Small-group coaching — entry point",
+    "ctaKeyword": "PHYSICS",
+    "ctaStyle": "Soft, educational. Invite people to DM or comment \"PHYSICS\" to start."
+  },
+  "signatureMethod": "The MOVE Framework (see move-framework.md)",
+  "colors": {
+    "black": "#000000",
+    "ink": "#0c0c0d",
+    "silver": "#c8ccd2",
+    "silverBright": "#eef1f4",
+    "yellow": "#efe400",
+    "yellowDeep": "#d8ce00"
+  },
+  "fonts": {
+    "heading": "Montserrat",
+    "body": "Inter"
+  },
+  "platforms": {
+    "primary": "Instagram",
+    "secondary": ["TikTok", "Facebook"]
+  }
+}

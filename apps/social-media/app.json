@@ -1,0 +1,9 @@
+{
+  "id": "social-media",
+  "name": "Social Media Content",
+  "category": "Content",
+  "description": "Plan and generate on-brand social content (Reel hooks, carousels, captions) plus a content calendar.",
+  "status": "ready",
+  "requiredContext": ["brand", "voice", "key-messaging", "content-pillars"],
+  "outputs": ["reel hooks", "carousels", "captions", "content calendar", "story series"]
+}

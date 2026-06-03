@@ -1,0 +1,9 @@
+{
+  "id": "gbp-posts",
+  "name": "Google Business Profile Posts",
+  "category": "Local SEO",
+  "description": "Generate Google Business Profile posts, offers, and updates to boost local visibility.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice", "primaryOffer"],
+  "outputs": ["gbp posts", "offers", "updates"]
+}

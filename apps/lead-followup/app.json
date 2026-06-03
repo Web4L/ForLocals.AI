@@ -1,0 +1,9 @@
+{
+  "id": "lead-followup",
+  "name": "Lead Follow-Up",
+  "category": "Sales",
+  "description": "Build automated lead nurture and follow-up sequences over SMS and email.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice", "primaryOffer"],
+  "outputs": ["follow-up sequences", "sms templates", "email templates"]
+}

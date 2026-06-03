@@ -1,0 +1,9 @@
+{
+  "id": "review-requests",
+  "name": "Review Requests",
+  "category": "Reputation",
+  "description": "Generate review-request campaigns (SMS/email) with direct review links to grow ratings.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice"],
+  "outputs": ["request messages", "follow-up sequences", "review links"]
+}

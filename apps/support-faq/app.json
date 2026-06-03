@@ -1,0 +1,9 @@
+{
+  "id": "support-faq",
+  "name": "Support & FAQ",
+  "category": "Support",
+  "description": "Draft customer support replies and FAQ/chatbot answers in the business's voice.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice"],
+  "outputs": ["faq answers", "support replies", "chatbot knowledge"]
+}

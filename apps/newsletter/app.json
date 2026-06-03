@@ -1,0 +1,9 @@
+{
+  "id": "newsletter",
+  "name": "Newsletter Writing",
+  "category": "Content",
+  "description": "Write recurring email newsletters in the business's voice that educate and drive action.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice", "key-messaging"],
+  "outputs": ["newsletter issues", "subject lines", "preview text"]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "momentum-fitness",
+  "name": "Momentum Fitness",
+  "location": "Pantego, TX",
+  "enabledApps": ["social-media"],
+  "appConfig": {
+    "social-media": {
+      "status": "ready",
+      "dashboard": "apps/social-media/index.html",
+      "focus": "Drive qualified leads into Physics 101",
+      "platforms": ["Instagram", "TikTok", "Facebook"]
+    }
+  }
+}

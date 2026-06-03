@@ -1,0 +1,9 @@
+{
+  "id": "app-slug",
+  "name": "App Name",
+  "category": "",
+  "description": "One-line summary of what this automation does.",
+  "status": "planned",
+  "requiredContext": ["brand", "voice"],
+  "outputs": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "review-responder",
+  "name": "Review Responder",
+  "category": "Reputation",
+  "description": "Draft on-brand replies to Google, Yelp, and Facebook reviews (positive and negative).",
+  "status": "planned",
+  "requiredContext": ["brand", "voice"],
+  "outputs": ["review replies"]
+}
