@@ -23,6 +23,10 @@ Running log of what's been built. Newest at top.
 - **GitHub Pages** — published from `main` (root `.nojekyll` added). Live root:
   `https://web4l.github.io/ForLocals.AI/`.
 - **CLAUDE.md + docs logs** — project memory + this log + `docs/decisions.md`.
+- **`/new-session` command** — `.claude/commands/new-session.md`; on invocation it loads
+  `CLAUDE.md`, `CONVENTIONS.md`, `docs/decisions.md`, `docs/progress.md`, embeds git
+  status + recent log, then briefs the session and proposes a next step before changing
+  anything. (Drafted fresh — GolfProAI's version was private/out of scope to copy.)
 
 ### Known gaps / issues
 - No `momentum-logo.png` yet — dashboards fall back to a CSS wordmark. Drop the PNG in
