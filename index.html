@@ -48,7 +48,11 @@
   .biz-head { position:relative; padding:26px 28px 22px; background:linear-gradient(180deg,#0c0c0e,#141416); border-bottom:1px solid var(--line); }
   .biz-head::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--accent); }
   .biz-head .loc { font-family:'Montserrat',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-  .biz-head h2 { font-family:'Montserrat',sans-serif; font-size:26px; font-weight:900; color:#fff; margin:6px 0 6px; text-transform:uppercase; letter-spacing:-.01em; }
+  .biz-head h2 { font-family:'Montserrat',sans-serif; font-size:26px; font-weight:900; margin:6px 0 6px; text-transform:uppercase; letter-spacing:-.01em; }
+  .biz-head h2 a { color:#fff; text-decoration:none; }
+  .biz-head h2 a:hover { color:var(--accent); }
+  .biz-head .biz-link { position:absolute; top:22px; right:26px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#000; background:var(--accent); padding:8px 13px; border-radius:8px; text-decoration:none; }
+  .biz-head .biz-link:hover { filter:brightness(1.08); }
   .biz-head .tagline { color:#b6bac1; font-size:14.5px; margin:0; max-width:64ch; }
   .biz-head .awards { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
   .award { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--silver-bright); border:1px solid var(--line); background:rgba(255,255,255,.03); padding:5px 10px; border-radius:6px; }
@@ -167,8 +171,9 @@
 
           return `<div class="biz" style="--accent:${accent};--accent-soft:${accent}22;">
             <div class="biz-head">
+              <a class="biz-link" href="businesses/${slug}/">Open homebase →</a>
               <div class="loc">${esc(biz.location||"")}</div>
-              <h2>${esc(biz.name||slug)}</h2>
+              <h2><a href="businesses/${slug}/">${esc(biz.name||slug)}</a></h2>
               <p class="tagline">${esc((brand&&brand.tagline)||(brand&&brand.positioning)||"")}</p>
               ${awards?`<div class="awards">${awards}</div>`:""}
             </div>

@@ -33,6 +33,7 @@ Apps may be **prompt-only**, **code**, or a **mix** — both paths exist from da
 ### `businesses/<business>/` — one client's homebase
 ```
 businesses/<business>/
+    index.html      this business's landing page (its own URL — see below)
     business.json   manifest: identity + which apps are enabled (see schema below)
     brand/          SINGLE SOURCE OF TRUTH for this business's context
         brand.json  name, location, colors, fonts, links, offers, CTA
@@ -40,6 +41,13 @@ businesses/<business>/
         assets/     logo, images
     apps/<slug>/    this business's config + generated content for one app
 ```
+
+**Per-business URL:** each business has its own page at `…/businesses/<business>/` served by
+its `index.html`. That file is **slug-agnostic** — it derives the business from its own folder
+path and uses only relative paths, so the copy from `_template` works unedited. The root
+`/index.html` homebase links to each business's landing page. (Per-business *subdomains* and
+*logins* are deferred until we port hosting to Vercel/Cloudflare — until then the site is
+fully public.)
 
 `business.json` schema:
 ```json
@@ -61,6 +69,9 @@ businesses/<business>/
 2. Fill in `brand/brand.json`, `brand/voice.md`, and drop a logo in `brand/assets/`.
 3. List the apps they're using in `business.json` → `enabledApps`.
 4. For each enabled app, create `apps/<slug>/` and start generating content.
+5. Add the slug to the `BUSINESSES` array in the root `/index.html` so it shows on the
+   homebase. The copied `index.html` already gives the business its own landing page —
+   no edits needed (it's slug-agnostic).
 
 ## Brand context never gets duplicated
 Anything about *who the business is* (tone, colors, offers, framework) lives only under

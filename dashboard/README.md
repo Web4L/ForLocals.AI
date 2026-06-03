@@ -11,9 +11,16 @@ It's the site's landing page.
 - Renders an **App Catalog** of all available automations (from `apps/*/app.json`) with a
   ready/planned status.
 
+## Two levels of dashboard
+- **Root homebase** (`/index.html`) — lists every business + the full app catalog.
+- **Per-business landing page** (`businesses/<slug>/index.html`) — each business's own URL
+  at `…/businesses/<slug>/`, showing just that business's brand header + enabled apps. It's
+  slug-agnostic (derives the business from its own path, all relative links), so the copy
+  shipped in `businesses/_template/` works unedited for any new business.
+
 ## Adding to it
 - **New business:** add its slug to the `BUSINESSES` array in `/index.html` (after creating
-  the folder per `CONVENTIONS.md`).
+  the folder per `CONVENTIONS.md`). Its landing page comes for free from the template.
 - **New app:** add its slug to the `APP_CATALOG` array in `/index.html`.
 
 These two arrays are the only manual registry — everything else is read from the JSON files.
