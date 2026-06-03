@@ -98,7 +98,7 @@ At the end of every session, before closing, run this checklist:
    writing, wait for approval).
 4. `git status` again — confirm all intended changes are staged.
 5. Commit with format: `[feature] brief summary`.
-6. Push to the working branch `claude/sharp-lovelace-ddbLb`. Push to `main` only
+6. Push to the working branch `claude/upbeat-bardeen-cPbNl`. Push to `main` only
    when I explicitly say so — **`main` is the live GitHub Pages branch, so pushing
    to it deploys the site.**
 7. Show the commit hash to confirm.

@@ -34,5 +34,5 @@ Re-read this before re-opening a settled question.
   (middleware, per-path) or Cloudflare Pages + Access (no-code, per-path/subdomain). Until
   then the site is fully public.
 
-- **Working branch:** `claude/sharp-lovelace-ddbLb`. `main` is the live Pages branch —
+- **Working branch:** `claude/upbeat-bardeen-cPbNl`. `main` is the live Pages branch —
   push to `main` only on explicit say-so (it deploys the site).

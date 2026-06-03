@@ -5,6 +5,10 @@ Running log of what's been built. Newest at top.
 ## 2026-06-03
 
 ### Built
+- **Branch-name reconcile** — updated the stale working-branch reference
+  `claude/sharp-lovelace-ddbLb` → `claude/upbeat-bardeen-cPbNl` in `CLAUDE.md`
+  (session hygiene), `docs/decisions.md` (working-branch note), and
+  `.claude/commands/new-session.md` (branch check). Docs now match the active branch.
 - **Repo scaffold** — `apps/` (10 reusable automation definitions + `_template`) and
   `businesses/` (`_template` + first business). Each app has `README.md`, `app.json`,
   `prompts/`, `src/`. Root `README.md` + `CONVENTIONS.md` document the structure.

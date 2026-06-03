@@ -23,7 +23,7 @@ making changes until I confirm the next step.
 After reading the above, reply with:
 1. **Where we are** — 2–3 sentences on the project's current state.
 2. **Last session** — what was most recently built (reconcile `docs/progress.md` with the git log).
-3. **Branch check** — confirm we're on `claude/sharp-lovelace-ddbLb`. Remember: `main` is the
+3. **Branch check** — confirm we're on `claude/upbeat-bardeen-cPbNl`. Remember: `main` is the
    **live GitHub Pages branch**, so only push there when I explicitly say so.
 4. **Known gaps / issues** — pulled from `docs/progress.md`.
 5. **Suggested next step** — the single most logical next task, phrased as a question so I can
