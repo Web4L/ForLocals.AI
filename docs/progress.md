@@ -5,6 +5,21 @@ Running log of what's been built. Newest at top.
 ## 2026-06-03
 
 ### Built
+- **Newsletter app — built & live (2nd Momentum app).** Promoted `apps/newsletter/`
+  from scaffold to `status: "ready"` (sharpened `app.json` + `README.md`, added reusable
+  `prompts/newsletter-prompts.md`). Built a full Momentum instance at
+  `businesses/momentum-fitness/apps/newsletter/` mirroring the social-media pattern:
+  a styled dashboard (`index.html`), `strategy.md` (cadence, 3 audience segments, issue
+  anatomy), two ready-to-send issues, `templates/` (issue structure + subject-line
+  library), an editorial-calendar template, an analytics tracker, and a `prompt-library.md`
+  with a newsletter-specific Master Context Block. Wired into `business.json`
+  (`enabledApps` + `appConfig`), so it auto-appears on Momentum's landing page and shows
+  "ready" in the root catalog. Verified: JSON valid, inline JS passes `node --check`,
+  21/21 files serve HTTP-200.
+- **Deep-research brief** — `docs/automation-research.md`: the 10 highest-value local-
+  business automations (5-angle research, confidence-flagged). Key finding: lead with
+  revenue-leak apps (speed-to-lead, reputation engine, no-show reduction, reactivation)
+  over bandwidth/content apps. Newsletter validated as the nurture/retention "glue."
 - **Branch-name reconcile** — updated the stale working-branch reference
   `claude/sharp-lovelace-ddbLb` → `claude/upbeat-bardeen-cPbNl` in `CLAUDE.md`
   (session hygiene), `docs/decisions.md` (working-branch note), and
@@ -36,12 +51,17 @@ Running log of what's been built. Newest at top.
 - No `momentum-logo.png` yet — dashboards fall back to a CSS wordmark. Drop the PNG in
   `businesses/momentum-fitness/brand/assets/`.
 - Site is **fully public** — no auth (deferred). Don't put anything sensitive in the repo.
-- Only 1 app (social-media) is actually built; the other 9 are scaffolded definitions.
+- 2 of 10 apps are built for Momentum (social-media, newsletter); the other 8 are
+  scaffolded definitions.
+- Newsletter issues use bracketed placeholders ([Coach Name], member stories) — fill before
+  sending. The "PHYSICS" keyword should be confirmed as the live one.
 - This environment can't run a headless browser, so no rendered screenshots — verified via
   HTTP-200 checks + JS syntax checks.
 
 ### Next steps
-- Build a second app for Momentum (e.g. newsletter or review-responder) using social-media
-  as the pattern.
+- Per `docs/automation-research.md`, the highest-value next build is a **revenue-leak** app
+  rather than another content app — for Momentum that's **Reactivation/Win-Back**
+  (at-risk-member re-engagement, matches their #1 churn pain), or the broadly applicable
+  **Reputation Engine** (review requests + AI responses).
 - Add the Momentum logo asset.
 - When ready: port hosting to Vercel/Cloudflare to add per-business logins.

@@ -2,13 +2,19 @@
   "id": "momentum-fitness",
   "name": "Momentum Fitness",
   "location": "Pantego, TX",
-  "enabledApps": ["social-media"],
+  "enabledApps": ["social-media", "newsletter"],
   "appConfig": {
     "social-media": {
       "status": "ready",
       "dashboard": "apps/social-media/index.html",
       "focus": "Drive qualified leads into Physics 101",
       "platforms": ["Instagram", "TikTok", "Facebook"]
+    },
+    "newsletter": {
+      "status": "ready",
+      "dashboard": "apps/newsletter/index.html",
+      "focus": "Nurture leads into Physics 101 and retain members",
+      "cadence": "Monthly"
     }
   }
 }
