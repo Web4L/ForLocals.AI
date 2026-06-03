@@ -1,0 +1,40 @@
+{
+  "tag": "{{OFFER}} · Newsletter",
+  "docTitleSuffix": "Newsletter",
+  "hero": {
+    "eyebrow": "Email Newsletter Engine",
+    "title": "{{HERO_HEADLINE}}",
+    "subcopy": "**{{BUSINESS_NAME}}** — {{LOCATION}}. One educational idea per issue, taught well, pointed softly at **{{OFFER}}**. Strategy, ready-to-send issues, templates, an editorial calendar, and AI prompts in one place."
+  },
+  "stats": [
+    { "n": "0",  "l": "Issues Ready" },
+    { "n": "0",  "l": "AI Prompts" },
+    { "n": "3",  "l": "Audience Segments" },
+    { "n": "12", "l": "Issues / Year" }
+  ],
+  "nav": [
+    { "group": "Start Here", "items": [
+      { "id": "overview", "title": "Overview", "file": "README.md",   "pill": "Intro" },
+      { "id": "strategy", "title": "Strategy", "file": "strategy.md", "pill": "Playbook" }
+    ]},
+    { "group": "Brand", "items": [
+      { "id": "voice", "title": "Voice & Tone", "file": "../../brand/voice.md", "pill": "Guidelines" }
+    ]},
+    { "group": "Newsletter Issues", "items": [
+      { "id": "issues", "title": "About the Issues", "file": "issues/README.md", "pill": "Overview" }
+    ]},
+    { "group": "Templates", "items": [
+      { "id": "structure", "title": "Issue Structure",     "file": "templates/issue-structure.md",      "pill": "Template" },
+      { "id": "subjects",  "title": "Subject-Line Library", "file": "templates/subject-line-library.md", "pill": "Swipe file" }
+    ]},
+    { "group": "Planning", "items": [
+      { "id": "calendar", "title": "Editorial Calendar", "file": "calendar/editorial-calendar-template.md", "pill": "Template" }
+    ]},
+    { "group": "Tools", "items": [
+      { "id": "prompts", "title": "Prompt Library", "file": "tools/prompt-library.md", "pill": "AI Prompts" }
+    ]},
+    { "group": "Performance", "items": [
+      { "id": "analytics", "title": "Analytics", "file": "analytics/README.md", "pill": "Tracking" }
+    ]}
+  ]
+}

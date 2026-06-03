@@ -5,6 +5,18 @@ Running log of what's been built. Newest at top.
 ## 2026-06-03
 
 ### Built
+- **Shared app-dashboard renderer (platform refactor).** Extracted the duplicated ~370-line
+  per-app dashboard into one self-theming renderer in the reserved `/dashboard/` folder:
+  `app-dashboard.css` (dark theme; accent + fonts are CSS vars), `app-dashboard.js` (reads
+  `brand.json` for theme + `manifest.json` for content; renders topbar/logo, hero, stats, nav,
+  markdown, scroll-spy, mobile menu), and a canonical thin `index.html` shell. Each business
+  app dashboard is now `shell + manifest.json` — Momentum's **social-media** and **newsletter**
+  both migrated (index.html went from ~370 lines → 28; no content/look change). Added copy-me
+  `apps/<slug>/template/` scaffolds for both apps so onboarding a dashboard is a folder copy +
+  manifest edit. brand.json gained an optional `logo` field. Docs updated (`dashboard/README`,
+  `CONVENTIONS`, `_template/README`, `CLAUDE.md`). Verified: `node --check`, 11/11 theming
+  unit tests, JSON valid, every manifest-referenced file HTTP-200, homebase + landing pages
+  untouched. **Visual fidelity not screenshot-verifiable here — confirm on live Pages.**
 - **Newsletter app — built & live (2nd Momentum app).** Promoted `apps/newsletter/`
   from scaffold to `status: "ready"` (sharpened `app.json` + `README.md`, added reusable
   `prompts/newsletter-prompts.md`). Built a full Momentum instance at

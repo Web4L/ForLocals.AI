@@ -1,0 +1,43 @@
+{
+  "tag": "Physics 101 · Content System",
+  "docTitleSuffix": "Content System",
+  "hero": {
+    "eyebrow": "Brand & Content System",
+    "title": "Where movement and *medicine* collide.",
+    "subcopy": "**Momentum Fitness** — Pantego, TX. The content engine behind our brand: clinical-grade strength training, rehabilitation, and our small-group **Physics 101** program. Positioning, messaging, ready-to-post content, and planning tools in one place."
+  },
+  "awards": [
+    "Living Magazine **Best of 2024**",
+    "Living Magazine **Best of 2025**",
+    "Featured in **360 West**"
+  ],
+  "stats": [
+    { "n": "5",  "l": "Content Pillars" },
+    { "n": "10", "l": "IG Posts Ready" },
+    { "n": "10", "l": "AI Prompts" },
+    { "n": "4",  "l": "Weekly Themes" }
+  ],
+  "nav": [
+    { "group": "Start Here", "items": [
+      { "id": "overview", "title": "Overview", "file": "README.md", "pill": "Intro" }
+    ]},
+    { "group": "Brand", "items": [
+      { "id": "pillars",   "title": "Content Pillars", "file": "../../brand/content-pillars.md", "pill": "Strategy" },
+      { "id": "messaging", "title": "Key Messaging",   "file": "../../brand/key-messaging.md",   "pill": "Strategy" },
+      { "id": "voice",     "title": "Voice & Tone",    "file": "../../brand/voice-tone.md",      "pill": "Guidelines" },
+      { "id": "move",      "title": "MOVE Framework",  "file": "../../brand/move-framework.md",  "pill": "Methodology" }
+    ]},
+    { "group": "Physics 101 Content", "items": [
+      { "id": "p101",   "title": "About Physics 101", "file": "content/physics-101/README.md",                   "pill": "Overview" },
+      { "id": "ideas",  "title": "Content Ideas",     "file": "content/physics-101/content-ideas.md",            "pill": "Ideas" },
+      { "id": "batch1", "title": "Instagram Batch 1", "file": "content/physics-101/instagram-content-batch-1.md", "pill": "Ready to post" }
+    ]},
+    { "group": "Planning", "items": [
+      { "id": "calendar", "title": "Monthly Calendar", "file": "calendar/monthly-content-calendar-template.md", "pill": "Template" }
+    ]},
+    { "group": "Tools", "items": [
+      { "id": "prompts", "title": "Prompt Library", "file": "tools/prompt-library.md", "pill": "AI Prompts" }
+    ]}
+  ],
+  "footer": "<b>MOMENTUM FITNESS</b> · Content System &nbsp;·&nbsp; Pantego, TX &nbsp;·&nbsp; This page renders the latest content straight from the repository."
+}

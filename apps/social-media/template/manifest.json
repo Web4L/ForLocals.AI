@@ -1,0 +1,32 @@
+{
+  "tag": "{{OFFER}} · Content System",
+  "docTitleSuffix": "Content System",
+  "hero": {
+    "eyebrow": "Brand & Content System",
+    "title": "{{HERO_HEADLINE}}",
+    "subcopy": "**{{BUSINESS_NAME}}** — {{LOCATION}}. On-brand social content — hooks, carousels, captions — and a content calendar, all pointed at **{{OFFER}}**."
+  },
+  "stats": [
+    { "n": "0", "l": "Content Pillars" },
+    { "n": "0", "l": "Posts Ready" },
+    { "n": "0", "l": "AI Prompts" },
+    { "n": "4", "l": "Weekly Themes" }
+  ],
+  "nav": [
+    { "group": "Start Here", "items": [
+      { "id": "overview", "title": "Overview", "file": "README.md", "pill": "Intro" }
+    ]},
+    { "group": "Brand", "items": [
+      { "id": "voice", "title": "Voice & Tone", "file": "../../brand/voice.md", "pill": "Guidelines" }
+    ]},
+    { "group": "Content", "items": [
+      { "id": "content", "title": "Content", "file": "content/README.md", "pill": "Overview" }
+    ]},
+    { "group": "Planning", "items": [
+      { "id": "calendar", "title": "Monthly Calendar", "file": "calendar/monthly-content-calendar-template.md", "pill": "Template" }
+    ]},
+    { "group": "Tools", "items": [
+      { "id": "prompts", "title": "Prompt Library", "file": "tools/prompt-library.md", "pill": "AI Prompts" }
+    ]}
+  ]
+}

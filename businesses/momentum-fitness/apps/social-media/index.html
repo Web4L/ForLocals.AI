@@ -3,363 +3,43 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Momentum Fitness — Content System</title>
-<meta name="description" content="The content engine and brand system for Momentum Fitness — clinical-grade training, rehabilitation, and Physics 101 in Pantego, TX." />
+<title>Dashboard — ForLocals.AI</title>
+<meta name="description" content="App dashboard rendered live from the repository." />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    /* Momentum Fitness brand — black / metallic silver / lemon-yellow */
-    --black: #000000;
-    --ink: #0c0c0d;
-    --panel: #141416;
-    --panel-2: #1c1c1f;
-    --line: #2a2a2e;
-    --line-soft: #232327;
-    --silver: #c8ccd2;
-    --silver-bright: #eef1f4;
-    --muted: #8b8f97;
-    --yellow: #efe400;       /* primary accent */
-    --yellow-deep: #d8ce00;
-    --yellow-glow: rgba(239,228,0,.5);
-    --paper: #0a0a0b;
-    --radius: 12px;
-    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 18px 40px rgba(0,0,0,.55);
-    --maxw: 1280px;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--silver);
-    background: var(--paper);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ---------- Top bar ---------- */
-  header.topbar {
-    position: sticky; top: 0; z-index: 50;
-    display: flex; align-items: center; gap: 16px;
-    padding: 12px 22px;
-    background: rgba(0,0,0,.94);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 1px 0 rgba(239,228,0,.18);
-  }
-  .brandmark { display: flex; align-items: center; gap: 13px; text-decoration: none; }
-
-  /* CSS recreation of the chrome wordmark; real PNG swapped in if present */
-  .logo-img { height: 38px; width: auto; display: none; }
-  .logo-css { display: flex; align-items: center; gap: 11px; }
-  .logo-ring {
-    width: 34px; height: 34px; border-radius: 50%;
-    border: 3px solid var(--yellow);
-    display: grid; place-items: center;
-    box-shadow: 0 0 12px var(--yellow-glow), inset 0 0 4px rgba(0,0,0,.6);
-    background: radial-gradient(circle at 50% 35%, #2a2a2e, #050505);
-    flex: none;
-  }
-  .logo-ring b {
-    font-family: 'Montserrat', sans-serif; font-weight: 900; font-style: italic;
-    font-size: 19px; line-height: 1;
-    background: linear-gradient(180deg, #ffffff 0%, #b9bdc4 45%, #6c7078 55%, #d3d7dc 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    transform: skewX(-8deg);
-  }
-  .logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .logo-word {
-    font-family: 'Montserrat', sans-serif; font-weight: 900; font-style: italic;
-    font-size: 21px; letter-spacing: .01em; transform: skewX(-8deg);
-    background: linear-gradient(180deg, #ffffff 0%, #c2c6cc 42%, #74787f 56%, #e6e9ec 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    text-shadow: 0 1px 0 rgba(0,0,0,.4);
-  }
-  .logo-sub {
-    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 9px;
-    letter-spacing: .52em; color: var(--yellow); margin-top: 3px; padding-left: 2px;
-  }
-  .topbar .spacer { flex: 1; }
-  .topbar .tag {
-    font-size: 11.5px; font-weight: 600; color: var(--black);
-    background: var(--yellow); padding: 6px 13px; border-radius: 999px;
-    letter-spacing: .04em; text-transform: uppercase;
-  }
-  .menu-btn { display:none; background: var(--yellow); border: none; color: #000; border-radius:8px; padding:7px 11px; cursor:pointer; font-size:18px; line-height:1; }
-
-  /* ---------- Layout ---------- */
-  .shell { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 272px 1fr; gap: 0; }
-  nav.side {
-    position: sticky; top: 60px; align-self: start;
-    height: calc(100vh - 60px); overflow-y: auto;
-    padding: 26px 18px 60px; border-right: 1px solid var(--line);
-    background: var(--ink);
-  }
-  nav.side .group { margin-bottom: 22px; }
-  nav.side .group-title {
-    font-family:'Montserrat',sans-serif; font-size: 10.5px; font-weight: 800; letter-spacing:.16em;
-    text-transform: uppercase; color: var(--yellow); padding: 0 12px; margin-bottom: 8px;
-  }
-  nav.side a {
-    display: block; padding: 8px 12px; border-radius: 8px; color: var(--silver);
-    text-decoration: none; font-size: 14.5px; font-weight: 500; transition: all .14s;
-    border-left: 2px solid transparent;
-  }
-  nav.side a:hover { background: var(--panel-2); color: var(--silver-bright); }
-  nav.side a.active { background: var(--panel-2); color: #fff; border-left-color: var(--yellow); font-weight: 600; }
-
-  main { padding: 0 0 100px; min-width: 0; background: var(--paper); }
-
-  /* ---------- Hero ---------- */
-  .hero {
-    position: relative; margin: 0; padding: 56px 48px 46px;
-    background:
-      radial-gradient(900px 300px at 88% -30%, rgba(239,228,0,.10), transparent 60%),
-      linear-gradient(180deg, #050505 0%, #101012 100%);
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .hero::after {
-    content:""; position:absolute; left:48px; right:48px; bottom:0; height:3px;
-    background: linear-gradient(90deg, var(--yellow), transparent 70%);
-  }
-  .awards { display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 22px; }
-  .award {
-    font-family:'Montserrat',sans-serif; font-size: 10.5px; font-weight: 700; letter-spacing:.06em;
-    text-transform: uppercase; color: var(--silver-bright);
-    border: 1px solid var(--line); background: rgba(255,255,255,.03);
-    padding: 6px 12px; border-radius: 6px;
-  }
-  .award b { color: var(--yellow); }
-  .hero .eyebrow { font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color: var(--yellow); }
-  .hero h1 {
-    font-family:'Montserrat',sans-serif; font-size: clamp(30px, 4.4vw, 50px); line-height:1.02;
-    margin:14px 0 18px; font-weight:900; text-transform: uppercase; color: #fff; max-width: 16ch;
-    letter-spacing: -.01em;
-  }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--yellow);
-    text-shadow: 0 0 22px rgba(239,228,0,.35);
-  }
-  .hero .rule { width: 120px; height: 4px; background: var(--yellow); border-radius: 2px; margin: 0 0 18px; }
-  .hero p { font-size: 16.5px; color: #b6bac1; max-width: 62ch; margin: 0; }
-  .hero p strong { color: var(--silver-bright); font-weight: 600; }
-  .hero .stats { display:flex; flex-wrap:wrap; gap: 12px; margin-top: 30px; }
-  .stat {
-    background: rgba(255,255,255,.02); border:1px solid var(--line); border-radius: 10px;
-    padding: 14px 18px; min-width: 116px; position: relative; overflow: hidden;
-  }
-  .stat::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background: var(--yellow); }
-  .stat b { font-family:'Montserrat',sans-serif; display:block; font-size: 25px; font-weight:900; color:#fff; }
-  .stat span { font-size: 11.5px; color: var(--muted); letter-spacing:.05em; text-transform: uppercase; font-weight:600; }
-
-  /* ---------- Content sections ---------- */
-  .section-wrap { padding: 0 48px; }
-  section.doc {
-    background: var(--panel); border:1px solid var(--line); border-radius: var(--radius);
-    box-shadow: var(--shadow); padding: 32px 38px; margin-top: 26px; scroll-margin-top: 78px;
-  }
-  .doc-kicker { display:flex; align-items:center; gap:10px; margin-bottom: 6px; }
-  .doc-kicker .pill {
-    font-family:'Montserrat',sans-serif; font-size: 10px; font-weight:800; letter-spacing:.12em;
-    text-transform:uppercase; color: var(--yellow); background: rgba(239,228,0,.08);
-    border: 1px solid rgba(239,228,0,.25); padding: 4px 11px; border-radius: 999px;
-  }
-
-  /* markdown styling */
-  .md h1 { font-family:'Montserrat',sans-serif; font-size: 26px; font-weight:900; text-transform: uppercase; margin: 6px 0 18px; line-height:1.1; color:#fff; }
-  .md h2 { font-family:'Montserrat',sans-serif; font-size: 19px; font-weight:800; margin: 30px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--silver-bright); }
-  .md h2:first-of-type { border-top: none; padding-top: 0; }
-  .md h3 { font-family:'Montserrat',sans-serif; font-size: 15.5px; font-weight:700; margin: 22px 0 8px; color: var(--yellow); }
-  .md p { margin: 10px 0; color: #b8bcc3; }
-  .md ul, .md ol { margin: 10px 0; padding-left: 22px; }
-  .md li { margin: 6px 0; color: #b8bcc3; }
-  .md li::marker { color: var(--yellow); }
-  .md strong { color: var(--silver-bright); font-weight: 650; }
-  .md em { color: var(--yellow); font-style: normal; font-weight: 600; }
-  .md a { color: var(--yellow); text-decoration: none; border-bottom: 1px solid rgba(239,228,0,.4); }
-  .md a:hover { border-bottom-color: var(--yellow); }
-  .md blockquote { border-left: 3px solid var(--yellow); background: rgba(239,228,0,.05); margin: 14px 0; padding: 10px 18px; border-radius: 0 10px 10px 0; color: var(--silver-bright); }
-  .md code { background: #050506; border: 1px solid var(--line); padding: 2px 7px; border-radius: 6px; font-size: 13.5px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: var(--yellow); }
-  .md table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; overflow:hidden; border-radius: 10px; box-shadow: 0 0 0 1px var(--line); }
-  .md th { background: var(--black); color: var(--yellow); text-align:left; padding: 11px 14px; font-family:'Montserrat',sans-serif; font-weight:700; font-size: 12px; letter-spacing:.04em; text-transform: uppercase; }
-  .md td { padding: 11px 14px; border-top: 1px solid var(--line); color:#b8bcc3; }
-  .md tr:nth-child(even) td { background: rgba(255,255,255,.015); }
-  .md hr { border: none; border-top: 1px dashed var(--line); margin: 26px 0; }
-
-  .loading { padding: 60px; text-align:center; color: var(--muted); }
-  .err { background: rgba(239,228,0,.06); border:1px solid rgba(239,228,0,.3); color: var(--silver-bright); padding:14px 18px; border-radius:10px; font-size:14px; margin-top:10px; }
-
-  footer { text-align:center; color: var(--muted); font-size: 13px; padding: 44px 20px 10px; }
-  footer b { color: var(--silver); font-weight: 600; }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width: 880px) {
-    .shell { grid-template-columns: 1fr; }
-    nav.side {
-      position: fixed; top: 59px; left: 0; right: 0; bottom: 0; height: auto;
-      z-index: 40; border-right: none;
-      transform: translateX(-100%); transition: transform .2s; box-shadow: var(--shadow);
-    }
-    nav.side.open { transform: translateX(0); }
-    .menu-btn { display: block; }
-    .hero, .section-wrap { padding-left: 20px; padding-right: 20px; }
-    .hero::after { left:20px; right:20px; }
-    section.doc { padding: 24px 20px; }
-  }
-</style>
+<link rel="stylesheet" href="../../../../dashboard/app-dashboard.css" />
 </head>
 <body>
+  <!-- ForLocals.AI shared app dashboard. This shell is identical for every business + app;
+       all content comes from ./manifest.json and ../../brand/brand.json (see
+       /dashboard/app-dashboard.js). Do not add per-app markup here — edit manifest.json. -->
   <header class="topbar">
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-    <a class="brandmark" href="#overview" aria-label="Momentum Fitness">
-      <img class="logo-img" id="logoImg" src="../../brand/assets/momentum-logo.png" alt="Momentum Fitness" />
-      <span class="logo-css" id="logoCss">
-        <span class="logo-ring"><b>M</b></span>
-        <span class="logo-text">
-          <span class="logo-word">MOMENTUM</span>
-          <span class="logo-sub">FITNESS</span>
-        </span>
-      </span>
-    </a>
+    <a class="brandmark" id="brandmark" href="#overview" aria-label="Dashboard"></a>
     <span class="spacer"></span>
-    <span class="tag">Physics 101 · Content System</span>
+    <span class="tag" id="tag"></span>
   </header>
 
   <div class="shell">
     <nav class="side" id="sidenav"><!-- nav injected --></nav>
     <main>
       <div class="hero">
-        <div class="awards">
-          <span class="award">Living Magazine <b>Best of 2024</b></span>
-          <span class="award">Living Magazine <b>Best of 2025</b></span>
-          <span class="award">Featured in <b>360 West</b></span>
-        </div>
-        <div class="eyebrow">Brand &amp; Content System</div>
-        <h1>Where movement and <em>medicine</em> collide.</h1>
+        <div class="awards" id="awards"></div>
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 id="heroTitle"></h1>
         <div class="rule"></div>
-        <p><strong>Momentum Fitness</strong> — Pantego, TX. The content engine behind our brand: clinical-grade strength training, rehabilitation, and our small-group <strong>Physics 101</strong> program. Positioning, messaging, ready-to-post content, and planning tools in one place.</p>
+        <p id="heroSub"></p>
         <div class="stats" id="stats"></div>
       </div>
       <div class="section-wrap" id="content">
         <div class="loading">Loading content…</div>
       </div>
-      <footer>
-        <b>MOMENTUM FITNESS</b> · Content System &nbsp;·&nbsp; Pantego, TX &nbsp;·&nbsp; This page renders the latest content straight from the repository.
-      </footer>
+      <footer id="footer"></footer>
     </main>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
-  <script>
-    // ----- Manifest: groups -> sections -> markdown source files -----
-    const MANIFEST = [
-      { group: "Start Here", items: [
-        { id: "overview", title: "Overview", file: "README.md", pill: "Intro" },
-      ]},
-      { group: "Brand", items: [
-        { id: "pillars",   title: "Content Pillars", file: "../../brand/content-pillars.md", pill: "Strategy" },
-        { id: "messaging", title: "Key Messaging",   file: "../../brand/key-messaging.md",   pill: "Strategy" },
-        { id: "voice",     title: "Voice & Tone",    file: "../../brand/voice-tone.md",      pill: "Guidelines" },
-        { id: "move",      title: "MOVE Framework",  file: "../../brand/move-framework.md",  pill: "Methodology" },
-      ]},
-      { group: "Physics 101 Content", items: [
-        { id: "p101",   title: "About Physics 101",     file: "content/physics-101/README.md",                  pill: "Overview" },
-        { id: "ideas",  title: "Content Ideas",         file: "content/physics-101/content-ideas.md",           pill: "Ideas" },
-        { id: "batch1", title: "Instagram Batch 1",     file: "content/physics-101/instagram-content-batch-1.md", pill: "Ready to post" },
-      ]},
-      { group: "Planning", items: [
-        { id: "calendar", title: "Monthly Calendar", file: "calendar/monthly-content-calendar-template.md", pill: "Template" },
-      ]},
-      { group: "Tools", items: [
-        { id: "prompts", title: "Prompt Library", file: "tools/prompt-library.md", pill: "AI Prompts" },
-      ]},
-    ];
-
-    const STATS = [
-      { n: "5", l: "Content Pillars" },
-      { n: "10", l: "IG Posts Ready" },
-      { n: "10", l: "AI Prompts" },
-      { n: "4", l: "Weekly Themes" },
-    ];
-
-    marked.setOptions({ gfm: true, breaks: false });
-
-    // Use the real logo PNG if it's been committed to the repo; otherwise keep CSS wordmark
-    (function () {
-      const img = document.getElementById('logoImg');
-      const css = document.getElementById('logoCss');
-      img.addEventListener('load', () => { img.style.display = 'block'; css.style.display = 'none'; });
-      img.addEventListener('error', () => { img.remove(); });
-    })();
-
-    // Build hero stats
-    document.getElementById('stats').innerHTML = STATS.map(s =>
-      `<div class="stat"><b>${s.n}</b><span>${s.l}</span></div>`).join('');
-
-    // Build nav
-    const nav = document.getElementById('sidenav');
-    nav.innerHTML = MANIFEST.map(g => `
-      <div class="group">
-        <div class="group-title">${g.group}</div>
-        ${g.items.map(it => `<a href="#${it.id}" data-id="${it.id}">${it.title}</a>`).join('')}
-      </div>`).join('');
-
-    // Fetch + render all sections
-    const content = document.getElementById('content');
-    const allItems = MANIFEST.flatMap(g => g.items);
-
-    async function render() {
-      const results = await Promise.all(allItems.map(async it => {
-        try {
-          const res = await fetch(it.file, { cache: "no-store" });
-          if (!res.ok) throw new Error(res.status + " " + res.statusText);
-          return { it, md: await res.text(), ok: true };
-        } catch (e) {
-          return { it, err: e.message, ok: false };
-        }
-      }));
-
-      content.innerHTML = results.map(r => `
-        <section class="doc" id="${r.it.id}">
-          <div class="doc-kicker"><span class="pill">${r.it.pill}</span></div>
-          ${ r.ok
-              ? `<div class="md">${marked.parse(r.md)}</div>`
-              : `<div class="md"><h1>${r.it.title}</h1><div class="err">Couldn't load <code>${r.it.file}</code> (${r.err}). If you're opening this file directly from disk, view it through GitHub Pages instead.</div></div>` }
-        </section>`).join('');
-
-      setupScrollSpy();
-    }
-
-    // Scroll spy to highlight active nav item
-    function setupScrollSpy() {
-      const links = [...nav.querySelectorAll('a')];
-      const byId = id => links.find(l => l.dataset.id === id);
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(en => {
-          if (en.isIntersecting) {
-            links.forEach(l => l.classList.remove('active'));
-            const a = byId(en.target.id);
-            if (a) a.classList.add('active');
-          }
-        });
-      }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
-      allItems.forEach(it => {
-        const el = document.getElementById(it.id);
-        if (el) obs.observe(el);
-      });
-    }
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.addEventListener('click', e => { if (e.target.tagName === 'A') nav.classList.remove('open'); });
-
-    render();
-  </script>
+  <script src="../../../../dashboard/app-dashboard.js"></script>
 </body>
 </html>

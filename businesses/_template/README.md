@@ -12,7 +12,11 @@ Then:
    `brand/assets/`.
 2. List the apps this business uses in `business.json` → `enabledApps` (slugs must match
    folders under the top-level `apps/`).
-3. For each enabled app, create `apps/<slug>/` here and start generating content.
+3. For each enabled app, add a dashboard by copying that app's template:
+   `cp -r ../../apps/<slug>/template apps/<slug>` — then edit `apps/<slug>/manifest.json`
+   (hero, stats, nav) and replace the placeholder markdown with real content. The dashboard's
+   `index.html` is the shared shell and is not edited; it themes itself from `brand/brand.json`.
+   Point `business.json` → `appConfig.<slug>.dashboard` at `apps/<slug>/index.html`.
 
 `brand/` is this business's **single source of truth** — every app reads from it, so never
 duplicate brand details inside app folders. See `../../CONVENTIONS.md`.

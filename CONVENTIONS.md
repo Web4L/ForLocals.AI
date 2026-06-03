@@ -40,7 +40,17 @@ businesses/<business>/
         voice.md    tone of voice
         assets/     logo, images
     apps/<slug>/    this business's config + generated content for one app
+        index.html  the shared dashboard shell (copied as-is; never edited)
+        manifest.json  this dashboard's hero/stats/nav (the only chrome you edit)
+        …           the app's markdown content (issues, calendar, prompts, …)
 ```
+
+**App dashboards are a shared renderer, not copied HTML.** Each `apps/<slug>/index.html` is a
+thin shell that loads one self-theming renderer from `/dashboard/` (`app-dashboard.css` +
+`app-dashboard.js`) and themes itself from this business's `brand/brand.json` (accent, fonts,
+name, awards). What's per-dashboard lives in `apps/<slug>/manifest.json` (tag, hero, stats,
+nav → section files). See `dashboard/README.md` for the `manifest.json` schema. To add a
+dashboard, copy the app's `apps/<slug>/template/` folder (below) — don't hand-write HTML.
 
 **Per-business URL:** each business has its own page at `…/businesses/<business>/` served by
 its `index.html`. That file is **slug-agnostic** — it derives the business from its own folder
@@ -63,12 +73,18 @@ fully public.)
 1. `cp -r apps/_template apps/<slug>` (or create the four files above).
 2. Fill in `README.md` + `app.json` (`status: "planned"` until built).
 3. Build the prompt templates in `prompts/` and/or code in `src/`.
+4. When the app is ready to ship a dashboard, add a `template/` instance scaffold (the shared
+   `index.html` shell + a tokenized `manifest.json` + placeholder content) so a business can
+   onboard with a folder copy. See `apps/newsletter/template/` for the reference pattern.
 
 ## Onboarding a new business
 1. `cp -r businesses/_template businesses/<business-slug>`.
 2. Fill in `brand/brand.json`, `brand/voice.md`, and drop a logo in `brand/assets/`.
 3. List the apps they're using in `business.json` → `enabledApps`.
-4. For each enabled app, create `apps/<slug>/` and start generating content.
+4. For each enabled app, copy its dashboard template — `cp -r apps/<slug>/template
+   businesses/<business-slug>/apps/<slug>` — then edit `manifest.json`, fill the `{{TOKENS}}`
+   in the placeholder markdown with real content, and set `appConfig.<slug>.dashboard` to
+   `apps/<slug>/index.html` in `business.json`. (The `index.html` shell isn't edited.)
 5. Add the slug to the `BUSINESSES` array in the root `/index.html` so it shows on the
    homebase. The copied `index.html` already gives the business its own landing page —
    no edits needed (it's slug-agnostic).

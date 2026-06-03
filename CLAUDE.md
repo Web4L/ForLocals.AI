@@ -45,12 +45,15 @@ from that. Don't resurrect it.
 
 ## Architecture & how-to
 The repo has two independent dimensions:
-- `apps/<slug>/` — a reusable automation: `README.md`, `app.json`, `prompts/`, `src/`
+- `apps/<slug>/` — a reusable automation: `README.md`, `app.json`, `prompts/`, `src/`, and a
+  `template/` dashboard scaffold (shell + tokenized `manifest.json` + placeholder content)
 - `businesses/<slug>/` — one client's homebase: `index.html` (its landing page),
   `business.json` (manifest), `brand/` (single source of truth), `apps/<slug>/`
-  (that business's config + generated content)
+  (that business's config + generated content). Each app dashboard is a thin `index.html`
+  shell + a `manifest.json`; both come from the app's `template/`.
 - `/index.html` — root homebase listing all businesses + the app catalog
-- `dashboard/` — reserved for future shared dashboard code
+- `dashboard/` — the shared app-dashboard renderer: `app-dashboard.css` + `app-dashboard.js` +
+  a canonical `index.html` shell. Per-app dashboards load it and self-theme from `brand.json`.
 
 Two manual registries in `/index.html`: the `BUSINESSES` array and the
 `APP_CATALOG` array. Everything else is read from the JSON files.

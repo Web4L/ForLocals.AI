@@ -17,6 +17,7 @@
     "ctaStyle": "Soft, educational. Invite people to DM or comment \"PHYSICS\" to start."
   },
   "signatureMethod": "The MOVE Framework (see move-framework.md)",
+  "logo": "momentum-logo.png",
   "colors": {
     "black": "#000000",
     "ink": "#0c0c0d",
