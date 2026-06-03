@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ForLocals.AI — Homebase</title>
+<meta name="description" content="ForLocals.AI — the automation homebase for local businesses. Every business's apps in one place." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black:#000; --ink:#0b0b0d; --panel:#141416; --panel-2:#1b1b1f;
+    --line:#2a2a2e; --silver:#c8ccd2; --silver-bright:#eef1f4; --muted:#8b8f97;
+    --accent:#5b8cff;            /* platform default; per-business overrides this */
+    --accent-soft:rgba(91,140,255,.12);
+    --radius:14px; --maxw:1200px;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 18px 40px rgba(0,0,0,.5);
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:'Inter',system-ui,-apple-system,sans-serif; color:var(--silver); background:#0a0a0b; line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+  header.topbar { position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px; padding:13px 24px; background:rgba(0,0,0,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .brandmark { display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .logo-ring { width:32px; height:32px; border-radius:9px; display:grid; place-items:center; background:linear-gradient(145deg,#26262b,#050505); border:1px solid var(--line); flex:none; }
+  .logo-ring b { font-family:'Montserrat',sans-serif; font-weight:900; font-style:italic; font-size:17px; color:#fff; transform:skewX(-7deg); }
+  .logo-word { font-family:'Montserrat',sans-serif; font-weight:900; font-size:18px; letter-spacing:.01em; color:#fff; }
+  .logo-word span { color:var(--accent); }
+  .topbar .spacer { flex:1; }
+  .topbar .tag { font-size:11px; font-weight:700; color:#000; background:#c8ccd2; padding:6px 12px; border-radius:999px; letter-spacing:.05em; text-transform:uppercase; }
+
+  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 24px 100px; }
+
+  .hero { padding:54px 0 30px; }
+  .hero .eyebrow { font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:var(--accent); }
+  .hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(28px,4.2vw,46px); line-height:1.04; margin:13px 0 14px; font-weight:900; color:#fff; max-width:18ch; }
+  .hero p { font-size:16px; color:#b6bac1; max-width:60ch; margin:0; }
+  .hero .metrics { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+  .metric { background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:10px; padding:13px 18px; min-width:120px; }
+  .metric b { font-family:'Montserrat',sans-serif; display:block; font-size:24px; font-weight:900; color:#fff; }
+  .metric span { font-size:11px; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+
+  .section-title { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:46px 0 16px; padding-bottom:10px; border-bottom:1px solid var(--line); }
+
+  /* business panel */
+  .biz { --accent:#5b8cff; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
+  .biz-head { position:relative; padding:26px 28px 22px; background:linear-gradient(180deg,#0c0c0e,#141416); border-bottom:1px solid var(--line); }
+  .biz-head::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--accent); }
+  .biz-head .loc { font-family:'Montserrat',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+  .biz-head h2 { font-family:'Montserrat',sans-serif; font-size:26px; font-weight:900; color:#fff; margin:6px 0 6px; text-transform:uppercase; letter-spacing:-.01em; }
+  .biz-head .tagline { color:#b6bac1; font-size:14.5px; margin:0; max-width:64ch; }
+  .biz-head .awards { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  .award { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--silver-bright); border:1px solid var(--line); background:rgba(255,255,255,.03); padding:5px 10px; border-radius:6px; }
+
+  .apps-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; padding:22px 28px 28px; }
+  .app-card { display:flex; flex-direction:column; background:var(--panel-2); border:1px solid var(--line); border-radius:11px; padding:16px 17px; transition:border-color .14s, transform .14s; }
+  .app-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .app-card .cat { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
+  .app-card h3 { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; color:#fff; margin:5px 0 7px; }
+  .app-card p { font-size:13px; color:#a7abb3; margin:0 0 14px; flex:1; }
+  .app-card .foot { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .open-btn { font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#000; background:var(--accent); padding:8px 14px; border-radius:8px; text-decoration:none; }
+  .open-btn:hover { filter:brightness(1.08); }
+  .badge { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:6px 11px; border-radius:999px; }
+  .badge.ready { color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent); }
+  .badge.planned { color:var(--muted); background:rgba(255,255,255,.03); border:1px solid var(--line); }
+
+  /* catalog */
+  .catalog { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+  .cat-card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:15px 16px; }
+  .cat-card .cat { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  .cat-card h3 { font-family:'Montserrat',sans-serif; font-size:14.5px; font-weight:800; color:#fff; margin:5px 0 6px; }
+  .cat-card p { font-size:12.5px; color:#a7abb3; margin:0 0 12px; }
+  .dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  .dot.ready { background:#4ade80; } .dot.planned { background:#5a5e66; }
+  .status-txt { font-size:11px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
+
+  .loading,.err { padding:30px 0; color:var(--muted); }
+  .err { color:var(--silver-bright); }
+  footer { text-align:center; color:var(--muted); font-size:13px; padding:44px 20px 0; }
+  footer b { color:var(--silver); }
+
+  @media (max-width:680px){ .apps-grid,.catalog{ padding-left:18px; padding-right:18px; } .biz-head{ padding-left:20px; padding-right:20px; } }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brandmark" href="#top" aria-label="ForLocals.AI">
+      <span class="logo-ring"><b>F</b></span>
+      <span class="logo-word">ForLocals<span>.AI</span></span>
+    </a>
+    <span class="spacer"></span>
+    <span class="tag">Homebase</span>
+  </header>
+
+  <div class="wrap" id="top">
+    <section class="hero">
+      <div class="eyebrow">Automation Homebase</div>
+      <h1>Every business. Every app. One home.</h1>
+      <p>ForLocals.AI runs high-value automations for local businesses — each powered by that
+         business's own brand context. Pick a business to jump into its apps.</p>
+      <div class="metrics" id="metrics"></div>
+    </section>
+
+    <div class="section-title">Businesses</div>
+    <div id="businesses"><div class="loading">Loading businesses…</div></div>
+
+    <div class="section-title">App Catalog · Available Automations</div>
+    <div class="catalog" id="catalog"><div class="loading">Loading catalog…</div></div>
+
+    <footer><b>ForLocals.AI</b> · Automation homebase for local businesses · Rendered live from the repository.</footer>
+  </div>
+
+  <script>
+    // ---- Registries (the only thing to update when adding businesses/apps) ----
+    const BUSINESSES = ["momentum-fitness"];
+    const APP_CATALOG = ["social-media","newsletter","blog-seo","review-responder",
+      "review-requests","ad-copy","lead-followup","gbp-posts","support-faq","proposals"];
+
+    const getJSON = async (p) => { const r = await fetch(p,{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); };
+    const accentOf = (brand) => (brand && brand.colors && (brand.colors.yellow || brand.colors.accent || brand.colors.primary)) || "#5b8cff";
+    const esc = (s) => (s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+    async function loadCatalog() {
+      const cards = await Promise.all(APP_CATALOG.map(async slug => {
+        try {
+          const a = await getJSON(`apps/${slug}/app.json`);
+          const ready = a.status === "ready";
+          return `<div class="cat-card">
+            <div class="cat">${esc(a.category||"")}</div>
+            <h3>${esc(a.name||slug)}</h3>
+            <p>${esc(a.description||"")}</p>
+            <span class="status-txt"><span class="dot ${ready?"ready":"planned"}"></span>${ready?"Ready":"Planned"}</span>
+          </div>`;
+        } catch(e){ return `<div class="cat-card"><h3>${esc(slug)}</h3><p>Definition not found.</p></div>`; }
+      }));
+      document.getElementById("catalog").innerHTML = cards.join("");
+      return APP_CATALOG.length;
+    }
+
+    async function loadBusinesses() {
+      const blocks = await Promise.all(BUSINESSES.map(async slug => {
+        try {
+          const [biz, brand] = await Promise.all([
+            getJSON(`businesses/${slug}/business.json`),
+            getJSON(`businesses/${slug}/brand/brand.json`).catch(()=>null)
+          ]);
+          const accent = accentOf(brand);
+          const awards = (brand && brand.awards || []).map(a=>`<span class="award">${esc(a)}</span>`).join("");
+          const enabled = biz.enabledApps || [];
+
+          const cards = await Promise.all(enabled.map(async appSlug => {
+            const meta = await getJSON(`apps/${appSlug}/app.json`).catch(()=>({name:appSlug,category:"",description:""}));
+            const cfg = (biz.appConfig||{})[appSlug] || {};
+            const href = cfg.dashboard ? `businesses/${slug}/${cfg.dashboard}` : null;
+            const action = href
+              ? `<a class="open-btn" href="${href}">Open →</a>`
+              : `<span class="badge planned">Set up</span>`;
+            return `<div class="app-card">
+              <div class="cat">${esc(meta.category||"")}</div>
+              <h3>${esc(meta.name||appSlug)}</h3>
+              <p>${esc(cfg.focus || meta.description || "")}</p>
+              <div class="foot"><span class="badge ready">Active</span>${action}</div>
+            </div>`;
+          }));
+
+          return `<div class="biz" style="--accent:${accent};--accent-soft:${accent}22;">
+            <div class="biz-head">
+              <div class="loc">${esc(biz.location||"")}</div>
+              <h2>${esc(biz.name||slug)}</h2>
+              <p class="tagline">${esc((brand&&brand.tagline)||(brand&&brand.positioning)||"")}</p>
+              ${awards?`<div class="awards">${awards}</div>`:""}
+            </div>
+            <div class="apps-grid">${cards.join("") || '<p style="color:var(--muted)">No apps enabled yet.</p>'}</div>
+          </div>`;
+        } catch(e){
+          return `<div class="biz"><div class="biz-head"><h2>${esc(slug)}</h2><p class="tagline err">Couldn't load business.json (${e.message}). Serve this over HTTP (GitHub Pages), not from disk.</p></div></div>`;
+        }
+      }));
+      document.getElementById("businesses").innerHTML = blocks.join("");
+      return BUSINESSES.length;
+    }
+
+    (async () => {
+      const [nApps, nBiz] = await Promise.all([loadCatalog(), loadBusinesses()]);
+      document.getElementById("metrics").innerHTML = `
+        <div class="metric"><b>${nBiz}</b><span>Businesses</span></div>
+        <div class="metric"><b>${nApps}</b><span>Automations</span></div>`;
+    })();
+  </script>
+</body>
+</html>
