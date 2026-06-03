@@ -5,6 +5,28 @@ Re-read this before re-opening a settled question.
 
 ## 2026-06-03
 
+- **Shared app-dashboard renderer (architecture).** Per-app dashboards are no longer
+  standalone HTML — each is a thin `index.html` shell + a per-instance `manifest.json` that
+  load one shared, self-theming renderer in `/dashboard/` (`app-dashboard.css` +
+  `app-dashboard.js`). The renderer themes from the business's `brand.json` (accent, fonts,
+  name, awards, logo) and reads content/nav from `manifest.json`. Rationale: the app
+  dashboards were ~95% identical; this kills the duplication and makes a new dashboard
+  *config + content, not copied code*. Each app ships a copy-me `template/` scaffold, so
+  onboarding a dashboard is a folder copy + manifest edit.
+
+- **Dashboard theming = shared dark theme + per-brand accent.** The dashboard UI (grays,
+  shadows, spacing) is a fixed universal "operator console" look; only the accent color and
+  fonts are themed per business from `brand.json`. We deliberately did NOT make every gray
+  brand-configurable — a business sets an accent, not a full palette. Revisit if a client
+  needs a light theme.
+
+- **App prioritization is "revenue-leak first" (guidance).** Per the 5-angle research in
+  `docs/automation-research.md`, the highest-value next builds are revenue-leak automations
+  (speed-to-lead / missed-call, reputation engine, no-show reduction, reactivation) over
+  bandwidth/content apps. Content apps (social, newsletter) stay the low-friction "always-on"
+  hook, not the lead pitch. We built newsletter + generalized the dashboard pattern first to
+  harden the platform; the next *new* app should be a revenue-leak one.
+
 - **Pivot:** Dropped the single-purpose "5-Day Lead Flood" plumber-sprint product.
   ForLocals.AI is now a library of reusable automations ("apps") for local businesses,
   each run against per-business brand context, surfaced on a homebase dashboard.
