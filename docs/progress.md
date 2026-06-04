@@ -5,6 +5,29 @@ Running log of what's been built. Newest at top.
 ## 2026-06-04
 
 ### Built
+- **Momentum COO Operating System — spec + repo scaffold landed.** Landed the
+  COO OS build spec (v1.2) at `docs/strategy/momentum-coo-os.md` (new
+  `docs/strategy/` folder): three-layer architecture (MindBody = record, GHL =
+  engagement, Claude = COO brain), a 6-phase + Mini-Phase 0.5 rollout, Phase 0
+  credentials checklist, guardrails, and §7 decisions. Then scaffolded the
+  structure the spec defines (no backend logic yet, public-safe):
+  - **New top-level `integrations/`** with a `README.md` (explains the deliberate
+    backend exception) and a committed **`.env.example`** (GHL + MindBody +
+    sandbox toggle, no real secrets).
+  - **Root `.gitignore`** added — ignores `.env`/secrets (the repo had none).
+  - **`integration-hooks.md`** in both built Momentum apps
+    (`apps/social-media/`, `apps/newsletter/`) documenting their MindBody/GHL
+    touchpoints and which COO-OS phase each maps to. Marked "planned — not wired."
+  - **Decisions logged** — §7 ratified into `docs/decisions.md` (three-layer
+    architecture, text-first, community MCPs sandbox-first, official GHL MCP not
+    prod yet, hybrid bridge, deliberate backend-threshold exception scoped to
+    `integrations/`, Momentum as flagship lab).
+  - **Automation Coverage %:** 0% — nothing automated/runnable yet; this is the
+    spec + scaffold groundwork. Tracking metric per spec §5.9.
+  - **Not done (human/out-of-band):** GHL token + MindBody go-live request, the
+    Sheet→JSON pipeline, Phase 1 Morning Briefing dashboard, bridge trial. The
+    `integrations/` logic service is a future backend (off the static site).
+
 - **`/new-session` now reads context from `origin/main` (tooling).** It recurred: this
   session opened on `claude/compassionate-ritchie-F6WLt`, again cut from a stale commit, and
   the opening briefing again reported the newsletter app "not built." Root cause: the prior

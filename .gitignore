@@ -1,0 +1,14 @@
+# Secrets — never commit real credentials. Ship .env.example instead (see integrations/).
+.env
+.env.local
+*.env
+!.env.example
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Node (only relevant once integrations/ grows a custom logic service)
+node_modules/
+npm-debug.log*

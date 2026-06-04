@@ -5,6 +5,36 @@ Re-read this before re-opening a settled question.
 
 ## 2026-06-04
 
+### Momentum COO Operating System (build spec landed)
+
+Full spec: `docs/strategy/momentum-coo-os.md`. Decisions ratified from its §7:
+
+- **Three-layer architecture.** **MindBody** = system of record (member truth);
+  **GoHighLevel** = engagement engine (SMS/email/workflows); **Claude** = COO
+  reasoning layer (briefings, analysis, drafts, SOPs) — all behind a human-approve
+  gate. Never collapse the source of truth into the engagement engine. *(Settled)*
+- **v1 is text-first; no voice AI.** Voice is the most over-promised category
+  (latency + hallucination unsolved); ship SMS/text, treat voice as experimental
+  only. *(Settled)*
+- **Community MCPs are the convenience layer.** `vespo92/mindbody-mcp` and a GHL
+  community server are accepted for early phases, with **sandbox-first testing**
+  and **env-var-only secrets**. They grant full account access — scope, monitor,
+  rotate. *(Settled)*
+- **Official GHL MCP is NOT the production path** until its 422 errors
+  (contacts/opportunities/calendar) resolve. *(Settled — revisit if/when fixed)*
+- **Bridge = third-party connector + Claude Code hybrid**, not a fully custom
+  bridge: APIANT AppConnect / Appy Pie Automate for bidirectional sync + dedup,
+  plus a lightweight custom logic service for routing/reconciliation. *(Decided)*
+- **The COO OS deliberately crosses the backend threshold** that the static
+  ForLocals.AI site still defers — scoped to `integrations/`, nothing there
+  deploys to GitHub Pages. This is the logged exception, not drift; the static
+  public site stays backend-free. *(Decided)*
+- **Momentum = flagship case study + dev lab**, not a paying customer. Prove each
+  pattern on real Momentum data before generalizing into a ForLocals.AI app.
+  *(Settled)*
+
+### Platform / tooling
+
 - **Session branches must sync with `main` at start.** A session opened on a `claude/*`
   branch that was cut from a stale commit, so it lacked the newsletter app already live on
   `main` and the opening briefing reported wrong state. Fix: `/new-session` now fetches
