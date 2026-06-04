@@ -5,6 +5,22 @@ Running log of what's been built. Newest at top.
 ## 2026-06-04
 
 ### Built
+- **`/new-session` now reads context from `origin/main` (tooling).** It recurred: this
+  session opened on `claude/compassionate-ritchie-F6WLt`, again cut from a stale commit, and
+  the opening briefing again reported the newsletter app "not built." Root cause: the prior
+  sync guard reported branch divergence but still *loaded* its docs from the local checkout
+  (`@CLAUDE.md`/`@docs/progress.md`), so a stale branch still briefed off stale files.
+  Fast-forwarded onto `origin/main`, then hardened `/new-session` so it can't happen again:
+  - **Step 0 fetches `origin/main` first**, before reading anything.
+  - **Steps 1–2 read all canonical context FROM `origin/main`** (`git show origin/main:…`
+    for `CLAUDE.md`/`CONVENTIONS.md`/`decisions.md`/`progress.md`) and **verify the real
+    built state from the `main` tree** — dumping each `businesses/*/business.json` and
+    listing actual `apps/` folders — so "what's built" comes from live data, not prose.
+  - Added `git show:*` / `git ls-tree:*` to the command's allowed-tools.
+  - Note: GolfProAI's `/new-session` was the intended model but its repo is out of this
+    session's scope (`web4l/forlocals.ai` only) and can't be read, so the pattern was
+    rebuilt natively. Logged in `docs/decisions.md` (2026-06-04).
+
 - **Session-start sync guard + branch-name de-hardcoding (tooling).** This session opened on
   `claude/eloquent-euler-wUnfa`, a branch cut from a stale commit that lacked the newsletter
   app already live on `main` — so the opening briefing reported wrong state. Rebased the

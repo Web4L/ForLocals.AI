@@ -10,6 +10,17 @@ Re-read this before re-opening a settled question.
   `main` and the opening briefing reported wrong state. Fix: `/new-session` now fetches
   `origin/main` and reports how far the working branch diverges from it; if the branch is
   behind `main`, rebase onto `origin/main` before doing new work.
+- **`/new-session` reads its context from `origin/main`, not the local tree.** The fix
+  above still wasn't enough: it reported divergence but *loaded* the canonical docs with
+  `@CLAUDE.md`/`@docs/progress.md` from the local checkout, so a stale branch still briefed
+  off stale docs and again missed the newsletter app. Stronger rule: `/new-session` now
+  fetches first, then reads `CLAUDE.md`, `CONVENTIONS.md`, `docs/decisions.md`,
+  `docs/progress.md` **from `origin/main`** (via `git show origin/main:…`), and verifies
+  the real built state by dumping each `businesses/*/business.json` and listing actual
+  `apps/` folders straight from the `main` tree. The briefing is now grounded in live data,
+  so a stale checkout can no longer change what it sees. (GolfProAI's `/new-session` was the
+  intended model but is unreachable from this repo's session scope, so the pattern was
+  rebuilt natively.)
 - **Don't hardcode the working-branch name.** The per-session `claude/*` branch name kept
   drifting across `CLAUDE.md`, `docs/decisions.md`, and the `/new-session` command, so the
   docs were perpetually stale. The branch is now derived from `git status` rather than
