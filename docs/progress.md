@@ -84,6 +84,34 @@ Running log of what's been built. Newest at top.
     of pinning a literal name that drifts every session. Both decisions logged in
     `docs/decisions.md` (2026-06-04).
 
+### Known gaps / issues (as of 2026-06-04)
+- **COO Morning Briefing runs on SAMPLE data** — `briefings/latest.md` and
+  `data/briefing-sample.json` are illustrative, not real Momentum numbers.
+  Nothing is operational until a real daily export feeds the contract.
+- **Automation Coverage % = 0** — nothing in the COO OS runs on live data yet.
+- Phase 0 credentials are **not pulled** (GHL token + Location ID) and MindBody
+  go-live is **not requested** — both are human/out-of-band steps.
+- `integrations/` is a **scaffold only** (README + `.env.example`); no bridge,
+  reconciliation, or adapters built.
+- Site is still **fully public** — no auth (deferred). Sample data only, no PII.
+
+### Next steps
+- **▶ START HERE NEXT SESSION (user request, 2026-06-04):** Duncan wants a
+  walkthrough of **how to actually use the COO Morning Briefing and get it
+  operational ASAP.** Open the next session by explaining, in plain English:
+  (1) how to produce a real daily export in the `data/SCHEMA.md` shape — the
+  fastest path is the **Mini-Phase 0.5 Google Sheet → JSON**, no MindBody go-live
+  needed; (2) how to run the prompt in `tools/prompt-library.md` to generate the
+  brief; (3) how to publish it to `briefings/latest.md`. Then help him do the
+  first real one. Treat "get it operational ASAP" as the priority over building
+  Phase 2.
+- After Phase 1 is live on real data: **Phase 2 (early-churn detection →
+  win-back)** — the highest-$ revenue-leak automation, matches Momentum's #1 pain.
+- Pull GHL token + Location ID; submit the MindBody go-live request (Phase 0, §3
+  of the spec) so the live data path can replace the manual Sheet export.
+- Add the Momentum logo asset (`brand/assets/momentum-logo.png`).
+- When ready: port hosting to Vercel/Cloudflare for per-business logins.
+
 ## 2026-06-03
 
 ### Built
