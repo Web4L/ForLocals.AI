@@ -2,6 +2,23 @@
 
 Running log of what's been built. Newest at top.
 
+## 2026-06-04
+
+### Built
+- **Session-start sync guard + branch-name de-hardcoding (tooling).** This session opened on
+  `claude/eloquent-euler-wUnfa`, a branch cut from a stale commit that lacked the newsletter
+  app already live on `main` — so the opening briefing reported wrong state. Rebased the
+  branch onto `origin/main` (clean fast-forward) to recover the missing work, then fixed the
+  root cause two ways:
+  - **A — `/new-session` now syncs with `main`.** Added `git fetch:*`/`git rev-list:*` to the
+    command's allowed-tools; new step 2 fetches `origin/main` and prints divergence both ways;
+    step 3 ("Branch sync") flags when the branch is behind `main`, treats `progress.md` as
+    possibly stale, and offers to rebase before any new work.
+  - **B — stopped hardcoding the per-session branch name.** `CLAUDE.md`, `docs/decisions.md`,
+    and the `/new-session` command now derive the `claude/*` branch from `git status` instead
+    of pinning a literal name that drifts every session. Both decisions logged in
+    `docs/decisions.md` (2026-06-04).
+
 ## 2026-06-03
 
 ### Built
