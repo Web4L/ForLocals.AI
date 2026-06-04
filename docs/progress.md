@@ -5,6 +5,32 @@ Running log of what's been built. Newest at top.
 ## 2026-06-04
 
 ### Built
+- **COO OS Phase 1 — Morning Briefing scaffolded (app + Momentum instance).**
+  Built the read-only, low-risk first automation of the COO OS, rendering in the
+  existing dashboard with **zero new infra** (no backend on the public site).
+  - **New reusable app** `apps/coo-briefing/` (`app.json` status `ready`,
+    `README.md`, `prompts/morning-briefing-prompt.md`, `src/`). Added to the root
+    `APP_CATALOG` so it shows in the homebase catalog.
+  - **Momentum instance** `businesses/momentum-fitness/apps/coo-briefing/` using
+    the shared renderer (shell **byte-identical** to the canonical one) +
+    `manifest.json`. Content: `README.md`, `sop.md` (daily run), a one-page
+    `briefing-template.md`, `briefings/latest.md` (a **sample** brief rendered
+    from sample data, clearly labelled), `tools/prompt-library.md`, and
+    `integration-hooks.md`.
+  - **Data contract** — `data/SCHEMA.md` documents the fixed Sheet→JSON / API
+    shape (MindBody: sign-ups, attendance, no-shows, cancellations, expiring
+    contracts, sales; GHL: new leads, stalled pipeline, unanswered conversations)
+    so the prompt never changes when the source upgrades. `data/briefing-sample.json`
+    is the reference sample the dashboard renders today.
+  - **Wired in** `business.json` (`coo-briefing` first in `enabledApps` +
+    `appConfig`), so it leads Momentum's landing page.
+  - Verified: all JSON valid, root + landing inline JS pass `node --check`, shell
+    byte-identical to canonical, **every manifest-referenced file + the data file
+    HTTP-200** (local server).
+  - **Automation Coverage:** still 0% — sample data only; counts once the
+    Mini-Phase 0.5 export feeds it real numbers. **Not done:** the Sheet→JSON
+    export itself, GHL token / MindBody go-live (Phase 0), optional `src/` build.
+
 - **Momentum COO Operating System — spec + repo scaffold landed.** Landed the
   COO OS build spec (v1.2) at `docs/strategy/momentum-coo-os.md` (new
   `docs/strategy/` folder): three-layer architecture (MindBody = record, GHL =

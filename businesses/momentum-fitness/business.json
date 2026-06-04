@@ -2,8 +2,15 @@
   "id": "momentum-fitness",
   "name": "Momentum Fitness",
   "location": "Pantego, TX",
-  "enabledApps": ["social-media", "newsletter"],
+  "enabledApps": ["coo-briefing", "social-media", "newsletter"],
   "appConfig": {
+    "coo-briefing": {
+      "status": "ready",
+      "dashboard": "apps/coo-briefing/index.html",
+      "focus": "Daily 'what needs you today' brief from MindBody + GoHighLevel",
+      "phase": "COO OS · Phase 1",
+      "dataSource": "sample"
+    },
     "social-media": {
       "status": "ready",
       "dashboard": "apps/social-media/index.html",
