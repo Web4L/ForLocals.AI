@@ -3,6 +3,18 @@
 Running log of product, architecture, and strategic decisions. Newest at top.
 Re-read this before re-opening a settled question.
 
+## 2026-06-04
+
+- **Session branches must sync with `main` at start.** A session opened on a `claude/*`
+  branch that was cut from a stale commit, so it lacked the newsletter app already live on
+  `main` and the opening briefing reported wrong state. Fix: `/new-session` now fetches
+  `origin/main` and reports how far the working branch diverges from it; if the branch is
+  behind `main`, rebase onto `origin/main` before doing new work.
+- **Don't hardcode the working-branch name.** The per-session `claude/*` branch name kept
+  drifting across `CLAUDE.md`, `docs/decisions.md`, and the `/new-session` command, so the
+  docs were perpetually stale. The branch is now derived from `git status` rather than
+  pinned to a literal name anywhere.
+
 ## 2026-06-03
 
 - **Shared app-dashboard renderer (architecture).** Per-app dashboards are no longer
@@ -56,5 +68,6 @@ Re-read this before re-opening a settled question.
   (middleware, per-path) or Cloudflare Pages + Access (no-code, per-path/subdomain). Until
   then the site is fully public.
 
-- **Working branch:** `claude/upbeat-bardeen-cPbNl`. `main` is the live Pages branch —
-  push to `main` only on explicit say-so (it deploys the site).
+- **Working branch:** whatever `claude/*` branch the current session is on (the name is
+  assigned per session, so don't hardcode it — read it from `git status`). `main` is the
+  live Pages branch — push to `main` only on explicit say-so (it deploys the site).

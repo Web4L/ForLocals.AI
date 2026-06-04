@@ -101,9 +101,11 @@ At the end of every session, before closing, run this checklist:
    writing, wait for approval).
 4. `git status` again — confirm all intended changes are staged.
 5. Commit with format: `[feature] brief summary`.
-6. Push to the working branch `claude/upbeat-bardeen-cPbNl`. Push to `main` only
-   when I explicitly say so — **`main` is the live GitHub Pages branch, so pushing
-   to it deploys the site.**
+6. Push to **the `claude/*` working branch this session is on** (read it from
+   `git status` — the name changes each session, so never assume a hardcoded one).
+   Push to `main` only when I explicitly say so — **`main` is the live GitHub Pages
+   branch, so pushing to it deploys the site.** At session start, if the working
+   branch is behind `main`, rebase onto `origin/main` before doing new work.
 7. Show the commit hash to confirm.
 
 Never skip steps. Never commit without showing diffs first.
