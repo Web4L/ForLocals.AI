@@ -34,9 +34,6 @@
     ]},
     { "group": "Planning", "items": [
       { "id": "calendar", "title": "Monthly Calendar", "file": "calendar/monthly-content-calendar-template.md", "pill": "Template" }
-    ]},
-    { "group": "Tools", "items": [
-      { "id": "prompts", "title": "Prompt Library", "file": "tools/prompt-library.md", "pill": "AI Prompts" }
     ]}
   ],
   "footer": "<b>BL918AUTO</b> · B&amp;L Muffler &amp; Brake · Content System &nbsp;·&nbsp; 1112 W 41st, Tulsa OK &nbsp;·&nbsp; (918) 445-5160 &nbsp;·&nbsp; Sample preview rendered live from the repository."

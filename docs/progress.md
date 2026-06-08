@@ -17,8 +17,10 @@ Running log of what's been built. Newest at top.
   - **Social-media dashboard instance** `businesses/bl918auto/apps/social-media/`
     (shared renderer + `manifest.json`). Content: a **June 20 Re-Brand Open House
     campaign** (7-post countdown to drive foot traffic — free BBQ + giveaways,
-    11am–2pm, per their Facebook), an always-on **sample weekly** (7 posts), plus
-    overview + a BL918AUTO-filled prompt library.
+    11am–2pm Sat Jun 20, per their Facebook), an always-on **sample weekly**
+    (7 posts), plus an overview. **Deliberately withheld the prompt library /
+    Master Context Block** from the client-facing preview — handing over the
+    generation system would remove the reason to pay for the $99/mo service.
   - **Deliberately NOT added to the root `BUSINESSES` array** — it's an unlisted
     sales preview, not a launched client (per the warm-preview playbook).
   - **Placeholders flagged:** accent color (`#e23b2e`) + logo are stand-ins

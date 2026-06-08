@@ -10,7 +10,7 @@ own honest, plainspoken voice and pulled straight from what real customers alrea
 say (honest, fast, fair, great custom exhaust).
 
 ## Right now: the June 20 Open House
-The top priority is **driving foot traffic to the Re-Brand Open House** — Friday,
+The top priority is **driving foot traffic to the Re-Brand Open House** — Saturday,
 June 20, 11am–2pm, free BBQ 🍖 + giveaways 🎁 at 1112 W 41st. See
 **[June 20 Open House Posts](content/open-house-june-20.md)** for the full
 countdown campaign (announcement → BBQ teaser → giveaways → story → reminder →

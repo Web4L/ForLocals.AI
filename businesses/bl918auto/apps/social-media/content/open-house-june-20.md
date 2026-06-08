@@ -2,7 +2,7 @@
 
 **The event:** B&L Muffler & Brake is becoming **BL918AUTO** — and throwing a
 re-brand open house.
-**When:** Friday, **June 20 · 11:00am–2:00pm**
+**When:** Saturday, **June 20 · 11:00am–2:00pm**
 **What:** Free BBQ 🍖 · giveaways 🎁 · meet the crew
 **Where:** 1112 W 41st St, Tulsa, OK · (918) 445-5160
 
@@ -33,7 +33,7 @@ Big news: **B&L Muffler & Brake is becoming BL918AUTO.** 🎉
 Same corner. Same crew. Same honest, fair work you've trusted since 1994 — just a
 fresh name that reps where we're from (yeah, the 918 🤘).
 And we're not letting a moment like this go by quietly...
-🍖 **Re-Brand Open House — Friday, June 20 · 11am–2pm**
+🍖 **Re-Brand Open House — Saturday, June 20 · 11am–2pm**
 Free BBQ. Giveaways. Come see the new look and say hey.
 📍 1112 W 41st · 📞 (918) 445-5160
 Mark it down — details all week. 👀
@@ -44,10 +44,10 @@ Mark it down — details all week. 👀
 
 ## Post 2 — Free BBQ teaser *(~5 days out)*
 **Format:** Reel or mouth-watering photo
-**Hook:** "Free BBQ + your car people = Friday plans sorted. 🍖"
+**Hook:** "Free BBQ + your car people = Saturday plans sorted. 🍖"
 **Caption:**
 Let's be honest — you had us at **free BBQ.** 😋
-We're firing it up for our **Re-Brand Open House this Friday, June 20, 11am–2pm.**
+We're firing it up for our **Re-Brand Open House this Saturday, June 20, 11am–2pm.**
 Roll through, grab a plate, check out the new BL918AUTO look. No appointment, no
 catch — just good food and the crew that's kept Tulsa running since '94.
 Bring a buddy (and an appetite). 🤘
@@ -59,7 +59,7 @@ Bring a buddy (and an appetite). 🤘
 
 ## Post 3 — Giveaways teaser *(~3 days out)*
 **Format:** Carousel or photo
-**Hook:** "Free food AND giveaways? Friday's looking good. 🎁"
+**Hook:** "Free food AND giveaways? Saturday's looking good. 🎁"
 **Caption:**
 Two days out from the **BL918AUTO Re-Brand Open House** — and yep, we've got
 **giveaways** on top of the free BBQ. 🎉
@@ -67,7 +67,7 @@ Two days out from the **BL918AUTO Re-Brand Open House** — and yep, we've got
 🎁 Giveaways
 🤝 Meet Bill & the crew
 👀 See the new look
-**Friday, June 20 · 11am–2pm · 1112 W 41st**
+**Saturday, June 20 · 11am–2pm · 1112 W 41st**
 You don't have to buy a thing — just come hang. See you there, Tulsa. 🧡
 *#Giveaway #Tulsa #918 #BL918AUTO #OpenHouse*
 **Visual:** Photo of the giveaway items if you have them, or a fun "🎁 GIVEAWAYS" graphic with the event details. *(Tip: if you can name what's being given away, it'll pull even harder — just keep it accurate.)*
@@ -84,7 +84,7 @@ on cars for since 1994. New name, same promise:
 ✅ Fair, upfront pricing — no surprises.
 ✅ Custom exhaust done right, in-house.
 ✅ Treat you like a neighbor, because you are one.
-Come celebrate it with us **Friday, June 20, 11–2** — free BBQ & giveaways. 🍖🎁
+Come celebrate it with us **Saturday, June 20, 11–2** — free BBQ & giveaways. 🍖🎁
 📞 (918) 445-5160
 *#Tulsa918 #BL918AUTO #FamilyOwned #HonestMechanic*
 **Visual:** A short, genuine clip of Bill or the crew talking (even unscripted), or a photo of the team on the corner. People trust faces.
@@ -96,7 +96,7 @@ Come celebrate it with us **Friday, June 20, 11–2** — free BBQ & giveaways. 
 **Hook:** "Tomorrow. 🍖🎁 11–2. Be there."
 **Caption:**
 **Tomorrow's the day, Tulsa!** 🎉
-**BL918AUTO Re-Brand Open House — Friday, June 20 · 11am–2pm**
+**BL918AUTO Re-Brand Open House — Saturday, June 20 · 11am–2pm**
 🍖 Free BBQ · 🎁 Giveaways · 🤝 Meet the crew · 👀 New look
 📍 1112 W 41st St, Tulsa
 Swing by on your lunch break — we'll have a plate ready. See you tomorrow! 🤘
