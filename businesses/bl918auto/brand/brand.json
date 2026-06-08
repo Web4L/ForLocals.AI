@@ -1,0 +1,37 @@
+{
+  "id": "bl918auto",
+  "name": "BL918AUTO",
+  "legalName": "B&L Muffler & Brake Inc.",
+  "location": "Tulsa, OK",
+  "tagline": "Same honest crew. Fresh name.",
+  "positioning": "Tulsa's family-owned exhaust, muffler & brake shop since 1994. Custom exhaust is our specialty — cat-back systems, that deeper rumble, done right and done in-house. Honest diagnosis, fast turnaround, fair upfront pricing. We fix what's broken and leave the rest alone.",
+  "awards": [
+    "Family-owned since 1994",
+    "4.5★ · 150+ reviews",
+    "Custom exhaust specialists",
+    "Tulsa · 918"
+  ],
+  "primaryOffer": {
+    "name": "Re-Brand Open House — June 20",
+    "type": "In-person event — free BBQ + giveaways, 11am–2pm",
+    "ctaKeyword": "",
+    "ctaStyle": "Local walk-in shop. Soft CTAs: call (918) 445-5160, stop by 1112 W 41st, or 'see you June 20.' No keyword/DM funnel."
+  },
+  "signatureMethod": "Custom exhaust & honest repair",
+  "colors": {
+    "black": "#0a0a0b",
+    "ink": "#0c0c0d",
+    "silver": "#c8ccd2",
+    "silverBright": "#eef1f4",
+    "primary": "#e23b2e",
+    "accent": "#e23b2e"
+  },
+  "fonts": {
+    "heading": "Montserrat",
+    "body": "Inter"
+  },
+  "platforms": {
+    "primary": "Facebook",
+    "secondary": ["Instagram"]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "tag": "Open House · Jun 20 · Content System",
+  "docTitleSuffix": "Content System",
+  "hero": {
+    "eyebrow": "Brand & Content System",
+    "title": "Same honest crew. *Fresh* name.",
+    "subcopy": "**BL918AUTO** — Tulsa, OK. Custom exhaust, mufflers & brakes, family-owned since 1994. Your social content engine — built first to **pack the June 20 Re-Brand Open House** (free BBQ + giveaways, 11am–2pm), then keep the brand rolling all year."
+  },
+  "awards": [
+    "Family-owned **since 1994**",
+    "**4.5★** · 150+ reviews",
+    "**Custom exhaust** specialists",
+    "Tulsa **918**"
+  ],
+  "stats": [
+    { "n": "Jun 20", "l": "Open House" },
+    { "n": "7", "l": "Event Posts" },
+    { "n": "7", "l": "Weekly Posts" },
+    { "n": "30", "l": "Years in Tulsa" }
+  ],
+  "nav": [
+    { "group": "Start Here", "items": [
+      { "id": "overview", "title": "Overview", "file": "README.md", "pill": "Intro" }
+    ]},
+    { "group": "★ Open House Campaign", "items": [
+      { "id": "openhouse", "title": "June 20 Open House Posts", "file": "content/open-house-june-20.md", "pill": "Priority" }
+    ]},
+    { "group": "Always-On Content", "items": [
+      { "id": "weekly",  "title": "Weekly Posts (sample week)", "file": "content/weekly-posts.md", "pill": "Ready to post" },
+      { "id": "content", "title": "Content Overview", "file": "content/README.md", "pill": "Overview" }
+    ]},
+    { "group": "Brand", "items": [
+      { "id": "voice", "title": "Voice & Tone", "file": "../../brand/voice.md", "pill": "Guidelines" }
+    ]},
+    { "group": "Planning", "items": [
+      { "id": "calendar", "title": "Monthly Calendar", "file": "calendar/monthly-content-calendar-template.md", "pill": "Template" }
+    ]},
+    { "group": "Tools", "items": [
+      { "id": "prompts", "title": "Prompt Library", "file": "tools/prompt-library.md", "pill": "AI Prompts" }
+    ]}
+  ],
+  "footer": "<b>BL918AUTO</b> · B&amp;L Muffler &amp; Brake · Content System &nbsp;·&nbsp; 1112 W 41st, Tulsa OK &nbsp;·&nbsp; (918) 445-5160 &nbsp;·&nbsp; Sample preview rendered live from the repository."
+}

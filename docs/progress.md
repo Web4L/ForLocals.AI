@@ -5,6 +5,27 @@ Running log of what's been built. Newest at top.
 ## 2026-06-08
 
 ### Built
+- **First real prospect — BL918AUTO (Tulsa) warm-tier dashboard preview.** Ran the
+  GTM kit end-to-end on a live prospect: **BL918AUTO** (= B&L Muffler & Brake, a
+  family-owned Tulsa exhaust/muffler/brake shop, est. 1994, mid re-brand).
+  Researched their real public footprint (4.5★/150+ reviews; honest/fast/fair;
+  custom-exhaust specialty) and generated a free week of on-brand posts, then built
+  the **hosted dashboard preview** per `docs/strategy/outreach/warm-dashboard-howto.md`.
+  - **New (unlisted) business** `businesses/bl918auto/` — slug-agnostic landing
+    page + `business.json` + `brand/` (brand.json, voice.md). Shells copied
+    **byte-identical** from the templates (verified via `diff`).
+  - **Social-media dashboard instance** `businesses/bl918auto/apps/social-media/`
+    (shared renderer + `manifest.json`). Content: a **June 20 Re-Brand Open House
+    campaign** (7-post countdown to drive foot traffic — free BBQ + giveaways,
+    11am–2pm, per their Facebook), an always-on **sample weekly** (7 posts), plus
+    overview + a BL918AUTO-filled prompt library.
+  - **Deliberately NOT added to the root `BUSINESSES` array** — it's an unlisted
+    sales preview, not a launched client (per the warm-preview playbook).
+  - **Placeholders flagged:** accent color (`#e23b2e`) + logo are stand-ins
+    pending B&L's real re-brand art; giveaway specifics to confirm before posting.
+    No invented prices/promos/stats.
+  - Verified: all JSON valid; both shells byte-identical; every
+    manifest-referenced file + theme + shared renderer serve **HTTP-200**.
 - **Go-to-market playbook + cold-outreach kit (first GTM, no code/site change).**
   ForLocals.AI had a product thesis but no plan to get paying customers; this is
   that plan. All Markdown under `docs/strategy/` — nothing touches the live Pages

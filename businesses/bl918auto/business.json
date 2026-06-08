@@ -1,0 +1,14 @@
+{
+  "id": "bl918auto",
+  "name": "BL918AUTO",
+  "location": "Tulsa, OK",
+  "enabledApps": ["social-media"],
+  "appConfig": {
+    "social-media": {
+      "status": "ready",
+      "dashboard": "apps/social-media/index.html",
+      "focus": "Pack the June 20 Re-Brand Open House + keep B&L's honest, custom-exhaust brand front of mind",
+      "platforms": ["Facebook", "Instagram"]
+    }
+  }
+}
