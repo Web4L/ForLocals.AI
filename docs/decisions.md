@@ -37,6 +37,51 @@ but no GTM; these are the first customer-acquisition + pricing calls.
 - **Target = broad local service / brick-and-mortar** (~$500K–$2M) for the hook —
   no vertical gating, since the sample works from any public footprint. *(Decided)*
 
+> **⚠ Open divergence (2026-06-08):** the public marketing site below leads with the **AI-COO /
+> revenue** angle, which pulls against the hook-first GTM above (lead with the $99 free-social hook;
+> defer revenue / texting to expansion). Both were decided the same day in parallel sessions. The
+> user chose to **deploy the site as-is and reconcile the two afterward** — treat neither as
+> overriding the other until reconciled.
+
+### Public marketing website — positioning + structure (settled, pending reconciliation)
+
+Built the first public, prospect-facing site (separate from the internal homebase).
+Five positioning forks were decided in-session and should not be re-litigated:
+
+- **Angle / hero = "AI COO that runs your business on autopilot."** Operator-relief
+  framing leads; the old "library of content automations" bandwidth pitch does NOT
+  headline the public site. *(Settled)*
+- **ICP = founder-dependent owner-operators, vertical-agnostic.** Rejected both
+  gym-only and the broad "$500K–2M / 8 verticals" framings for the site's voice.
+  *(Settled)*
+- **Business model = a ladder:** free *Revenue Leak Audit* (tripwire) → revenue-leak
+  **bundle** ($/mo) → premium **done-with-you AI COO** tier. *(Settled)*
+- **Lead capture = no-backend form** (Formspree/Tally), keeping the site static. Each
+  form carries a hidden `interest` field (`coo`/`social`/`revenue`) to tag the play.
+  *(Settled — revisit if/when we add a backend.)*
+- **ForLocals.AI gets its own brand** (only businesses had one before): premium
+  minimal / editorial — *Fraunces* serif + *Inter*, deep-evergreen accent — defined as
+  CSS tokens in `site/marketing.css`. The dark "operator console" dashboard theme is
+  unchanged and separate. *(Settled; accent/serif retunable.)*
+- **Momentum = the proof case, not the product.** Public pages cite it as "we run this
+  ourselves," consistent with the flagship-lab decision. Content (social) is the
+  always-on hook, not the lead. *(Settled)*
+
+### Site structure / hosting
+
+- **Marketing site is the new front door; the homebase moved down.** New root
+  `index.html` = marketing home; the old homebase was **renamed at root** to
+  `homebase.html` (not nested) so its relative data-paths stay intact. Clean
+  `/social` + `/revenue` URLs come from folder `index.html` files — no router/build,
+  staying inside the static-stack rule. *(Decided)*
+- **Custom domain = `forlocals.ai` via apex on GitHub Pages.** DNS at Namecheap
+  (4 A records → GitHub Pages, 4 AAAA for IPv6, `www` CNAME → `web4l.github.io`);
+  Pages custom-domain set; root `CNAME` committed. Consequence: marketing pages use
+  **root-relative paths**, which are correct on the apex root but **break on the old
+  `web4l.github.io/ForLocals.AI/` project URL** — so preview on the apex domain only.
+  `CNAME` is read only on `main`, so the domain goes live on deploy to `main`.
+  *(Decided)*
+
 ## 2026-06-04
 
 ### Momentum COO Operating System (build spec landed)
