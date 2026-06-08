@@ -2,7 +2,7 @@
 
 On-brand social content for **BL918AUTO** (B&L Muffler & Brake, Tulsa) — built from
 their real reputation: honest, fast, fair, custom-exhaust experts, family-owned
-since 1994.
+since 1989.
 
 ## What's in here
 - **[June 20 Open House Posts](open-house-june-20.md)** — ⭐ the priority right
@@ -17,6 +17,6 @@ since 1994.
 3. During the Open House run-up, lead with the event campaign.
 
 ## Ground rules
-- Real voice, no corporate-speak. Lean into Tulsa / 918 / "since 1994."
+- Real voice, no corporate-speak. Lean into Tulsa / 918 / "since 1989."
 - **Never invent** prices, promos, giveaway specifics, or stats — confirm with the
   shop first.

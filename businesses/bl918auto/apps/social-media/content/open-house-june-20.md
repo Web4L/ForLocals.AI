@@ -27,10 +27,10 @@ re-brand open house.
 
 ## Post 1 — The Announcement *(~1 week out)*
 **Format:** Photo or simple graphic
-**Hook:** "30 years in, we've got news, Tulsa. 📣"
+**Hook:** "37 years in, we've got news, Tulsa. 📣"
 **Caption:**
 Big news: **B&L Muffler & Brake is becoming BL918AUTO.** 🎉
-Same corner. Same crew. Same honest, fair work you've trusted since 1994 — just a
+Same corner. Same crew. Same honest, fair work you've trusted since 1989 — just a
 fresh name that reps where we're from (yeah, the 918 🤘).
 And we're not letting a moment like this go by quietly...
 🍖 **Re-Brand Open House — Saturday, June 20 · 11am–2pm**
@@ -79,7 +79,7 @@ You don't have to buy a thing — just come hang. See you there, Tulsa. 🧡
 **Hook:** "New name. Here's what's NOT changing. 🛠️"
 **Caption:**
 So why **BL918AUTO**? The 918 is home — it's Tulsa, it's the folks we've worked
-on cars for since 1994. New name, same promise:
+on cars for since 1989. New name, same promise:
 ✅ We tell you what's *actually* wrong.
 ✅ Fair, upfront pricing — no surprises.
 ✅ Custom exhaust done right, in-house.
@@ -125,10 +125,10 @@ the shop. Bring the whole crew!
 **Caption:**
 What a day. 🙏 Thank you to everyone who came out to the **BL918AUTO** Re-Brand
 Open House — the food, the faces, the support meant the world.
-Same honest crew you've trusted since 1994, now rolling as **BL918AUTO.** Whether
+Same honest crew you've trusted since 1989, now rolling as **BL918AUTO.** Whether
 it's brakes, a muffler, or custom exhaust with that perfect rumble — we've got you.
 📞 (918) 445-5160 · 📍 1112 W 41st
-Here's to the next 30 years, Tulsa. 🤘
+Here's to the next 37 years, Tulsa. 🤘
 *#Tulsa #918 #BL918AUTO #ThankYou #CustomExhaust*
 **Visual:** A few of the best photos from the event (crowd, food, crew, new sign) as a carousel.
 

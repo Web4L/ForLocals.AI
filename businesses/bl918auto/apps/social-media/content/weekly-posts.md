@@ -25,12 +25,12 @@ Hearing any of these? Swing by — we'll look and tell you straight, no upsell.
 ---
 
 ## Day 2 — Tuesday · Single image (proof / social)
-**Hook:** "This is what keeps folks coming back for 30 years."
+**Hook:** "This is what keeps folks coming back for 37 years."
 **Caption:**
 Real words from a real customer: *"Bill is honest, dependable, fair on price — and
 always with a smile."* 🙏
 That's the whole job. Fix it right, charge you fair, treat you like a neighbor.
-Been doing it on 41st since 1994.
+Been doing it on 41st since 1989.
 Thanks for trusting us with your ride, Tulsa. 🧡 📞 (918) 445-5160
 *#Tulsa #918 #FamilyOwned #CustomerLove*
 **Visual:** Clean photo of the shop sign/storefront, review quote laid over it in big text.
@@ -38,11 +38,11 @@ Thanks for trusting us with your ride, Tulsa. 🧡 📞 (918) 445-5160
 ---
 
 ## Day 3 — Wednesday · Reel or photo (culture)
-**Hook:** "Family-owned since 1994. Same corner, same promise."
+**Hook:** "Family-owned since 1989. Same corner, same promise."
 **Caption:**
 We're not a chain. No call center, no rotating staff reading a script. When you
 call us, you get the people who'll actually work on your car.
-30+ years on W 41st — Tulsa raised us, and we're not going anywhere. 💪
+37+ years on W 41st — Tulsa raised us, and we're not going anywhere. 💪
 Come meet the crew next time you're in.
 *#TulsaSmallBusiness #918 #FamilyOwned #AutoRepair*
 **Visual:** Quick phone video panning the shop / crew at the bay, or a simple team photo. Real beats polished.
@@ -99,7 +99,7 @@ Everybody says they're honest. Here's what we mean by it:
 ✅ We fix what's broken and leave the rest alone.
 ✅ Fair, upfront pricing. No surprises at pickup.
 ✅ If it can wait, we'll tell you it can wait.
-That's how you stay on the same corner for 30 years. 🧡
+That's how you stay on the same corner for 37 years. 🧡
 📍 1112 W 41st, Tulsa · 📞 (918) 445-5160
 *#HonestMechanic #Tulsa918 #FamilyOwned #AutoRepair*
 **Visual:** Simple branded slides, one value each, or a photo of Bill/the shop on slide 1.
@@ -107,5 +107,5 @@ That's how you stay on the same corner for 30 years. 🧡
 ---
 
 > Built from B&L's real public reputation (honest, fast, fair, custom exhaust,
-> since 1994). **No invented prices, promos, or stats** — everything here should
+> since 1989). **No invented prices, promos, or stats** — everything here should
 > survive Bill reading it.

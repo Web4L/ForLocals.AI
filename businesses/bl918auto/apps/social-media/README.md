@@ -2,7 +2,7 @@
 
 A preview of what "ongoing social, done for you" looks like for **BL918AUTO**
 (B&L Muffler & Brake) — Tulsa's family-owned exhaust, muffler & brake shop since
-1994, currently re-branding.
+1989, currently re-branding.
 
 ## What this dashboard is
 One place where all of BL918AUTO's social content lives — written in the shop's

@@ -5,7 +5,7 @@
 > reviews already say: *honest, fast, fair, friendly.*
 
 ## Who we are
-B&L has been on W 41st in Tulsa since **1994**. Owner **Bill** and crew are known
+B&L has been on W 41st in Tulsa since **1989**. Owner **Bill** and crew are known
 for straight talk, quick turnaround, fair prices — and **custom exhaust** work
 (cat-back systems, the good rumble). The `918` in the new name is Tulsa's area
 code: this is a local shop, for local people.
