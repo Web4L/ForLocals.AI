@@ -2,6 +2,53 @@
 
 Running log of what's been built. Newest at top.
 
+## 2026-06-08
+
+### Built
+- **Go-to-market playbook + cold-outreach kit (first GTM, no code/site change).**
+  ForLocals.AI had a product thesis but no plan to get paying customers; this is
+  that plan. All Markdown under `docs/strategy/` — nothing touches the live Pages
+  render.
+  - **`docs/strategy/go-to-market.md`** — the active GTM: thesis (lead with the
+    lowest-friction hook, expand into revenue-leak apps), why-not-texting-first
+    (A2P/TCPA/list-trust), the **lead offer (free social week → $99/mo flat)**,
+    target (broad local service), cold-outreach close, the pricing/expansion
+    ladder + transparent-vs-quote-gated wedge, and a **first-week sprint** to land
+    customer #1.
+  - **`docs/strategy/outreach/`** — the kit you actually run:
+    `cold-outreach-templates.md` (DM/email/follow-up, gift-first, no "AI"),
+    `prospect-sample-prompt.md` (a **rapid brand-inference** prompt that turns a
+    prospect's *public* info into a free week of posts — reuses the social
+    Master Context Block pattern), and `warm-dashboard-howto.md` (spin a hosted
+    preview for warm replies by copying `apps/social-media/template/` — no new
+    code).
+  - **Decisions logged** in `docs/decisions.md` (2026-06-08): hook-first GTM,
+    free-social → $99/mo, texting deferred, cold/gift-first, tiered artifact,
+    transparent-pricing wedge, broad-local-service target.
+  - **Why social, not the higher-$ apps:** it's the lowest-trust/lowest-friction
+    cold offer AND the most-built thing in the repo (`apps/social-media/` +
+    shared renderer), so the play is *assembly, not new product* — fastest path
+    to a customer this week.
+
+### Known gaps / issues (as of 2026-06-08)
+- **No customer landed yet** — the kit exists; the next action is running it on
+  real prospects.
+- **Posting on a client's behalf** (vs. them pasting) still needs a social-account
+  access handoff — define once a paying client wants it.
+- **Reactivation/texting** (the highest-$ play) remains **deferred** behind A2P +
+  consent + trust; it's an expansion offer, not the entry.
+- Content is a **soft-ROI** offer — keep it positioned as the hook, expand into
+  Review Responses (next no-texting app to productize) for the revenue story.
+
+### Next steps
+- **▶ START HERE:** name one real local-business prospect and generate their free
+  sample week with `docs/strategy/outreach/prospect-sample-prompt.md`, then send
+  it cold — that's the "land a customer this week" action.
+- After the first conversion: productize **AI Review Responses** as expansion
+  offer #2 (also no-texting / public-data).
+- COO Morning Briefing → real data (the pre-existing Phase 1 next step) remains
+  open whenever the focus shifts back to Momentum ops.
+
 ## 2026-06-04
 
 ### Built

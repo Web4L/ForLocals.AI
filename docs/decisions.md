@@ -3,6 +3,40 @@
 Running log of product, architecture, and strategic decisions. Newest at top.
 Re-read this before re-opening a settled question.
 
+## 2026-06-08
+
+### Go-to-market / monetization (first GTM decisions)
+
+Full playbook: `docs/strategy/go-to-market.md`. ForLocals.AI had a product thesis
+but no GTM; these are the first customer-acquisition + pricing calls.
+
+- **Lead with the lowest-friction hook, not the highest-value app.** Get in the
+  door with something we can deliver **free before the prospect says yes**, that
+  needs **no system access and no customer data**, then **expand** each account
+  into the revenue-leak apps once trust exists. *(Decided)*
+- **Lead offer = free week of on-brand social posts → $99/mo flat, cancel
+  anytime.** Content is honestly a *soft* sell (weak ROI attribution), so it's
+  positioned as the **door-opener**, never oversold as a revenue driver. $99 is a
+  deliberate **hook price** — the goal is the relationship + logo + expansion, not
+  social profit. *(Decided)*
+- **Texting offers are deferred, not abandoned.** Reactivation / missed-call
+  text-back is high-$ but starts with SMS → **A2P 10DLC registration + TCPA
+  consent + handing over the customer database** = wrong thing to put in front of
+  a stranger you're closing this week. Texting becomes an **expansion offer** for
+  accounts that already trust us. *(Decided 2026-06-08, supersedes the 2026-06-03
+  "reactivation = next build" guidance as the* first *paid motion — reactivation
+  is still the eventual expansion, just not the cold entry.)*
+- **Channel = cold outreach, gift-first ("deliver before yes").** Send finished
+  work, not a pitch; never lead with "AI." *(Decided)*
+- **Demo artifact is tiered:** finished posts cold (fast, the "this week" engine);
+  a hosted dashboard preview (reusing the shared renderer) only for warm
+  prospects who reply. *(Decided)*
+- **Pricing wedge = transparent, published, AI-native** vs. quote-gated
+  incumbents ($300–500/mo): start at $99, expand visibly toward the bundle band.
+  *(Decided)*
+- **Target = broad local service / brick-and-mortar** (~$500K–$2M) for the hook —
+  no vertical gating, since the sample works from any public footprint. *(Decided)*
+
 ## 2026-06-04
 
 ### Momentum COO Operating System (build spec landed)
