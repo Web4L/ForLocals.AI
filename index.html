@@ -3,196 +3,310 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ForLocals.AI — Homebase</title>
-<meta name="description" content="ForLocals.AI — the automation homebase for local businesses. Every business's apps in one place." />
+<title>ForLocals.AI — An AI COO that runs your local business on autopilot</title>
+<meta name="description" content="ForLocals.AI is an AI COO for local businesses — it watches your operations, briefs you daily, and plugs the revenue leaks that drain owner-operators. You approve, it runs." />
+<meta property="og:title" content="ForLocals.AI — An AI COO for local businesses" />
+<meta property="og:description" content="It watches your operations, briefs you daily, and plugs the revenue leaks. You approve, it runs." />
+<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --black:#000; --ink:#0b0b0d; --panel:#141416; --panel-2:#1b1b1f;
-    --line:#2a2a2e; --silver:#c8ccd2; --silver-bright:#eef1f4; --muted:#8b8f97;
-    --accent:#5b8cff;            /* platform default; per-business overrides this */
-    --accent-soft:rgba(91,140,255,.12);
-    --radius:14px; --maxw:1200px;
-    --shadow:0 1px 2px rgba(0,0,0,.5), 0 18px 40px rgba(0,0,0,.5);
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { margin:0; font-family:'Inter',system-ui,-apple-system,sans-serif; color:var(--silver); background:#0a0a0b; line-height:1.6; -webkit-font-smoothing:antialiased; }
-
-  header.topbar { position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px; padding:13px 24px; background:rgba(0,0,0,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
-  .brandmark { display:flex; align-items:center; gap:11px; text-decoration:none; }
-  .logo-ring { width:32px; height:32px; border-radius:9px; display:grid; place-items:center; background:linear-gradient(145deg,#26262b,#050505); border:1px solid var(--line); flex:none; }
-  .logo-ring b { font-family:'Montserrat',sans-serif; font-weight:900; font-style:italic; font-size:17px; color:#fff; transform:skewX(-7deg); }
-  .logo-word { font-family:'Montserrat',sans-serif; font-weight:900; font-size:18px; letter-spacing:.01em; color:#fff; }
-  .logo-word span { color:var(--accent); }
-  .topbar .spacer { flex:1; }
-  .topbar .tag { font-size:11px; font-weight:700; color:#000; background:#c8ccd2; padding:6px 12px; border-radius:999px; letter-spacing:.05em; text-transform:uppercase; }
-
-  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 24px 100px; }
-
-  .hero { padding:54px 0 30px; }
-  .hero .eyebrow { font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:var(--accent); }
-  .hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(28px,4.2vw,46px); line-height:1.04; margin:13px 0 14px; font-weight:900; color:#fff; max-width:18ch; }
-  .hero p { font-size:16px; color:#b6bac1; max-width:60ch; margin:0; }
-  .hero .metrics { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
-  .metric { background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:10px; padding:13px 18px; min-width:120px; }
-  .metric b { font-family:'Montserrat',sans-serif; display:block; font-size:24px; font-weight:900; color:#fff; }
-  .metric span { font-size:11px; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
-
-  .section-title { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:46px 0 16px; padding-bottom:10px; border-bottom:1px solid var(--line); }
-
-  /* business panel */
-  .biz { --accent:#5b8cff; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
-  .biz-head { position:relative; padding:26px 28px 22px; background:linear-gradient(180deg,#0c0c0e,#141416); border-bottom:1px solid var(--line); }
-  .biz-head::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--accent); }
-  .biz-head .loc { font-family:'Montserrat',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-  .biz-head h2 { font-family:'Montserrat',sans-serif; font-size:26px; font-weight:900; margin:6px 0 6px; text-transform:uppercase; letter-spacing:-.01em; }
-  .biz-head h2 a { color:#fff; text-decoration:none; }
-  .biz-head h2 a:hover { color:var(--accent); }
-  .biz-head .biz-link { position:absolute; top:22px; right:26px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#000; background:var(--accent); padding:8px 13px; border-radius:8px; text-decoration:none; }
-  .biz-head .biz-link:hover { filter:brightness(1.08); }
-  .biz-head .tagline { color:#b6bac1; font-size:14.5px; margin:0; max-width:64ch; }
-  .biz-head .awards { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
-  .award { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--silver-bright); border:1px solid var(--line); background:rgba(255,255,255,.03); padding:5px 10px; border-radius:6px; }
-
-  .apps-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; padding:22px 28px 28px; }
-  .app-card { display:flex; flex-direction:column; background:var(--panel-2); border:1px solid var(--line); border-radius:11px; padding:16px 17px; transition:border-color .14s, transform .14s; }
-  .app-card:hover { border-color:var(--accent); transform:translateY(-2px); }
-  .app-card .cat { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
-  .app-card h3 { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; color:#fff; margin:5px 0 7px; }
-  .app-card p { font-size:13px; color:#a7abb3; margin:0 0 14px; flex:1; }
-  .app-card .foot { display:flex; align-items:center; justify-content:space-between; gap:10px; }
-  .open-btn { font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#000; background:var(--accent); padding:8px 14px; border-radius:8px; text-decoration:none; }
-  .open-btn:hover { filter:brightness(1.08); }
-  .badge { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:6px 11px; border-radius:999px; }
-  .badge.ready { color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent); }
-  .badge.planned { color:var(--muted); background:rgba(255,255,255,.03); border:1px solid var(--line); }
-
-  /* catalog */
-  .catalog { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
-  .cat-card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:15px 16px; }
-  .cat-card .cat { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
-  .cat-card h3 { font-family:'Montserrat',sans-serif; font-size:14.5px; font-weight:800; color:#fff; margin:5px 0 6px; }
-  .cat-card p { font-size:12.5px; color:#a7abb3; margin:0 0 12px; }
-  .dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; vertical-align:middle; }
-  .dot.ready { background:#4ade80; } .dot.planned { background:#5a5e66; }
-  .status-txt { font-size:11px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
-
-  .loading,.err { padding:30px 0; color:var(--muted); }
-  .err { color:var(--silver-bright); }
-  footer { text-align:center; color:var(--muted); font-size:13px; padding:44px 20px 0; }
-  footer b { color:var(--silver); }
-
-  @media (max-width:680px){ .apps-grid,.catalog{ padding-left:18px; padding-right:18px; } .biz-head{ padding-left:20px; padding-right:20px; } }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site/marketing.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brandmark" href="#top" aria-label="ForLocals.AI">
-      <span class="logo-ring"><b>F</b></span>
-      <span class="logo-word">ForLocals<span>.AI</span></span>
-    </a>
-    <span class="spacer"></span>
-    <span class="tag">Homebase</span>
-  </header>
 
-  <div class="wrap" id="top">
-    <section class="hero">
-      <div class="eyebrow">Automation Homebase</div>
-      <h1>Every business. Every app. One home.</h1>
-      <p>ForLocals.AI runs high-value automations for local businesses — each powered by that
-         business's own brand context. Pick a business to jump into its apps.</p>
-      <div class="metrics" id="metrics"></div>
-    </section>
-
-    <div class="section-title">Businesses</div>
-    <div id="businesses"><div class="loading">Loading businesses…</div></div>
-
-    <div class="section-title">App Catalog · Available Automations</div>
-    <div class="catalog" id="catalog"><div class="loading">Loading catalog…</div></div>
-
-    <footer><b>ForLocals.AI</b> · Automation homebase for local businesses · Rendered live from the repository.</footer>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">ForLocals<span class="dot-ai">.AI</span></a>
+    <span class="nav-spacer"></span>
+    <button class="nav-toggle" aria-label="Menu">≡</button>
+    <div class="nav-links">
+      <a href="/revenue/">Revenue</a>
+      <a href="/social/">Social</a>
+      <a href="#how">How it works</a>
+      <a href="#proof">Proof</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary nav-cta" href="#audit">Free Leak Audit</a>
+    </div>
   </div>
+</nav>
 
-  <script>
-    // ---- Registries (the only thing to update when adding businesses/apps) ----
-    const BUSINESSES = ["momentum-fitness"];
-    const APP_CATALOG = ["coo-briefing","social-media","newsletter","blog-seo","review-responder",
-      "review-requests","ad-copy","lead-followup","gbp-posts","support-faq","proposals"];
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">An AI COO for local business</p>
+    <h1>The business runs <em>on autopilot.</em> You stay the owner.</h1>
+    <p class="lead">You didn't start your business to spend your nights pulling reports, chasing
+      no-shows, and answering leads at 9pm. ForLocals.AI is an AI Chief Operating Officer that
+      watches your operations, tells you what needs you today, and quietly plugs the leaks that
+      drain owner-operators — all behind your approval.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#audit">Get your free Leak Audit</a>
+      <a class="btn btn-ghost btn-lg" href="#proof">See one we actually run →</a>
+    </div>
+    <div class="statline">
+      <div class="stat"><b>100×</b><span>more likely to reach a lead when you respond in 5 minutes</span></div>
+      <div class="stat"><b>5–7%</b><span>of revenue the average local business loses to no-shows</span></div>
+      <div class="stat"><b>25–95%</b><span>more profit from just a 5% lift in retention</span></div>
+    </div>
+  </div>
+</header>
 
-    const getJSON = async (p) => { const r = await fetch(p,{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); };
-    const accentOf = (brand) => (brand && brand.colors && (brand.colors.yellow || brand.colors.accent || brand.colors.primary)) || "#5b8cff";
-    const esc = (s) => (s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+<section class="section" id="how">
+  <div class="container">
+    <p class="eyebrow">How the AI COO works</p>
+    <h2>Like a COO who never sleeps — and never goes rogue.</h2>
+    <p class="lead" style="margin-bottom:46px;">It plugs into the tools you already use, watches the
+      numbers, and does the operational legwork. Nothing reaches a customer without your say-so.</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <h3>It watches your operations</h3>
+          <p>Sign-ups, attendance, no-shows, expiring contracts, new leads, stalled deals, unanswered
+            messages — pulled from your booking system and CRM into one place.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>It briefs you every morning</h3>
+          <p>A one-page “what needs you today” — the handful of things that actually move money,
+            with the noise stripped out. Two minutes, not two hours.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>It drafts the work</h3>
+          <p>The win-back text to the member who stopped showing. The reply to the new lead. The
+            review response. Written in your voice, from your brand context — not generic AI mush.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>You approve — it sends</h3>
+          <p>Text-first and human-approved on everything that touches a customer. You stay in
+            control; the AI just removes the lag and the busywork.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    async function loadCatalog() {
-      const cards = await Promise.all(APP_CATALOG.map(async slug => {
-        try {
-          const a = await getJSON(`apps/${slug}/app.json`);
-          const ready = a.status === "ready";
-          return `<div class="cat-card">
-            <div class="cat">${esc(a.category||"")}</div>
-            <h3>${esc(a.name||slug)}</h3>
-            <p>${esc(a.description||"")}</p>
-            <span class="status-txt"><span class="dot ${ready?"ready":"planned"}"></span>${ready?"Ready":"Planned"}</span>
-          </div>`;
-        } catch(e){ return `<div class="cat-card"><h3>${esc(slug)}</h3><p>Definition not found.</p></div>`; }
-      }));
-      document.getElementById("catalog").innerHTML = cards.join("");
-      return APP_CATALOG.length;
-    }
+<section class="section" id="ways">
+  <div class="container">
+    <p class="eyebrow">Two ways to start</p>
+    <h2>Begin where it hurts most. Grow into the full COO.</h2>
+    <p class="lead" style="margin-bottom:40px;">Most owners start with one of these and expand once
+      they trust it. Both are on-ramps to the full AI COO.</p>
+    <div class="hub">
+      <a class="hub-card" href="/revenue/">
+        <div class="kicker">Plug the leaks</div>
+        <h3>Revenue Recovery</h3>
+        <p>Stop losing money to missed calls, no-shows, silent churn, and slow follow-up. The
+          “automatic yes” — visceral, measurable, fast to pay for itself.</p>
+        <span class="go">Explore Revenue Recovery →</span>
+      </a>
+      <a class="hub-card" href="/social/">
+        <div class="kicker">Stay top-of-mind</div>
+        <h3>Always-On Content</h3>
+        <p>On-brand social content without the time sink — Reels, carousels, captions, and a
+          calendar, generated from your own voice and offers.</p>
+        <span class="go">Explore Always-On Content →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-    async function loadBusinesses() {
-      const blocks = await Promise.all(BUSINESSES.map(async slug => {
-        try {
-          const [biz, brand] = await Promise.all([
-            getJSON(`businesses/${slug}/business.json`),
-            getJSON(`businesses/${slug}/brand/brand.json`).catch(()=>null)
-          ]);
-          const accent = accentOf(brand);
-          const awards = (brand && brand.awards || []).map(a=>`<span class="award">${esc(a)}</span>`).join("");
-          const enabled = biz.enabledApps || [];
+<section class="section" id="pricing">
+  <div class="container">
+    <p class="eyebrow">The ladder</p>
+    <h2>Start free. Scale to a full operating team — for a fraction of one.</h2>
+    <div class="tiers" style="margin-top:40px;">
+      <div class="tier">
+        <div class="tier-name">Leak Audit</div>
+        <div class="tier-tag">Free · start here</div>
+        <div class="price">$0</div>
+        <ul>
+          <li>Where you're losing money, in writing</li>
+          <li>Speed-to-lead + review + no-show check</li>
+          <li>No commitment, no software to install</li>
+        </ul>
+        <a class="btn btn-ghost" href="#audit">Get the audit</a>
+      </div>
+      <div class="tier featured">
+        <!-- PRICE TOKEN: default $399/mo, within the $300–500 incumbent band. Confirm exact figure. -->
+        <div class="tier-name">Revenue-Leak Bundle</div>
+        <div class="tier-tag">Most popular</div>
+        <div class="price">$399<small>/mo</small></div>
+        <ul>
+          <li>Speed-to-lead &amp; missed-call text-back</li>
+          <li>Reputation engine (requests + AI replies)</li>
+          <li>No-show reduction + reminders</li>
+          <li>Reactivation &amp; win-back</li>
+          <li>On-brand content included</li>
+        </ul>
+        <a class="btn btn-primary" href="/revenue/">See what's included</a>
+      </div>
+      <div class="tier">
+        <div class="tier-name">AI COO</div>
+        <div class="tier-tag">Done-with-you</div>
+        <div class="price">Custom</div>
+        <ul>
+          <li>Daily COO briefing on your real numbers</li>
+          <li>Early-churn detection &amp; win-back</li>
+          <li>Margin &amp; CAC cockpit</li>
+          <li>SOPs that make you replaceable</li>
+        </ul>
+        <a class="btn btn-ghost" href="#audit">Talk to us</a>
+      </div>
+    </div>
+    <p class="muted" style="font-size:13.5px;margin-top:18px;">Comparable bundles from Podium, Birdeye,
+      Weave and GoHighLevel run $300–500/mo — without the AI COO layer or your brand voice baked in.</p>
+  </div>
+</section>
 
-          const cards = await Promise.all(enabled.map(async appSlug => {
-            const meta = await getJSON(`apps/${appSlug}/app.json`).catch(()=>({name:appSlug,category:"",description:""}));
-            const cfg = (biz.appConfig||{})[appSlug] || {};
-            const href = cfg.dashboard ? `businesses/${slug}/${cfg.dashboard}` : null;
-            const action = href
-              ? `<a class="open-btn" href="${href}">Open →</a>`
-              : `<span class="badge planned">Set up</span>`;
-            return `<div class="app-card">
-              <div class="cat">${esc(meta.category||"")}</div>
-              <h3>${esc(meta.name||appSlug)}</h3>
-              <p>${esc(cfg.focus || meta.description || "")}</p>
-              <div class="foot"><span class="badge ready">Active</span>${action}</div>
-            </div>`;
-          }));
+<section class="section" id="proof">
+  <div class="container">
+    <p class="eyebrow">Proof</p>
+    <h2>We don't just sell this. We run it.</h2>
+    <p class="lead" style="margin-bottom:34px;">ForLocals.AI is built and proven on a real business
+      first — every automation runs on live operations before it's offered to anyone else.</p>
+    <div class="proof-card">
+      <div>
+        <h3 style="font-size:26px;">Momentum Fitness · Pantego, TX</h3>
+        <p class="muted">Clinical-grade strength training and small-group coaching. Its AI COO,
+          social engine, and newsletter all run on ForLocals.AI today — daily briefings, on-brand
+          content, and member win-back, live in one homebase.</p>
+        <div class="awards">
+          <span class="award">Living Magazine “Best of” 2024</span>
+          <span class="award">Living Magazine “Best of” 2025</span>
+          <span class="award">Featured in 360 West</span>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/businesses/momentum-fitness/">Open the live homebase →</a>
+          <a class="btn btn-ghost" href="/businesses/momentum-fitness/apps/coo-briefing/index.html">See the COO briefing</a>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="background:var(--paper);">
+          <div class="num">A live example</div>
+          <h3 style="margin-top:6px;">“What needs you today”</h3>
+          <p>Each morning Momentum's owner gets a one-page brief: new sign-ups, attendance dips, at-risk
+            members, leads waiting on a reply — and the drafts to handle them. Approve, done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          return `<div class="biz" style="--accent:${accent};--accent-soft:${accent}22;">
-            <div class="biz-head">
-              <a class="biz-link" href="businesses/${slug}/">Open homebase →</a>
-              <div class="loc">${esc(biz.location||"")}</div>
-              <h2><a href="businesses/${slug}/">${esc(biz.name||slug)}</a></h2>
-              <p class="tagline">${esc((brand&&brand.tagline)||(brand&&brand.positioning)||"")}</p>
-              ${awards?`<div class="awards">${awards}</div>`:""}
-            </div>
-            <div class="apps-grid">${cards.join("") || '<p style="color:var(--muted)">No apps enabled yet.</p>'}</div>
-          </div>`;
-        } catch(e){
-          return `<div class="biz"><div class="biz-head"><h2>${esc(slug)}</h2><p class="tagline err">Couldn't load business.json (${e.message}). Serve this over HTTP (GitHub Pages), not from disk.</p></div></div>`;
-        }
-      }));
-      document.getElementById("businesses").innerHTML = blocks.join("");
-      return BUSINESSES.length;
-    }
+<section class="section" id="why">
+  <div class="container section-narrow">
+    <p class="eyebrow">Why ForLocals.AI</p>
+    <h2>AI-native, but honest about it.</h2>
+    <div class="grid grid-2" style="margin-top:34px;">
+      <div class="card">
+        <div class="kicker">Your brand, not a template</div>
+        <p>Every word is generated from your business's own voice, offers, and tone — defined once,
+          read by every automation. The longer it runs, the more it sounds like you.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Human-approved, always</div>
+        <p>Nothing AI writes reaches a customer without you. We default to text, not unreliable voice
+          AI, and never auto-publish — because your reputation isn't a place to gamble.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Outcome-priced</div>
+        <p>We lead with the leaks you can measure — a missed call, a no-show, a churned member — not
+          vanity metrics. If it can't be tied to money, we don't headline it.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">No snake oil</div>
+        <p>We won't sell you “AI voice agents” that aren't ready or claim social posts magically rank
+          you on Google. Straight talk about what actually moves the needle.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    (async () => {
-      const [nApps, nBiz] = await Promise.all([loadCatalog(), loadBusinesses()]);
-      document.getElementById("metrics").innerHTML = `
-        <div class="metric"><b>${nBiz}</b><span>Businesses</span></div>
-        <div class="metric"><b>${nApps}</b><span>Automations</span></div>`;
-    })();
-  </script>
+<section class="section" id="faq">
+  <div class="container section-narrow">
+    <p class="eyebrow">Questions</p>
+    <h2>The things owners ask first.</h2>
+    <div class="faq" style="margin-top:30px;">
+      <details>
+        <summary>Do I need to be technical?</summary>
+        <p>No. You read a short daily brief and tap approve. We handle the setup, the connections,
+          and the writing. If you can read a text message, you can run this.</p>
+      </details>
+      <details>
+        <summary>What if the AI says something wrong?</summary>
+        <p>It can't go out on its own. Every customer-facing message is drafted for your approval
+          first. The AI removes the lag and the typing — you keep the final word.</p>
+      </details>
+      <details>
+        <summary>Is my data safe?</summary>
+        <p>We connect to the tools you already use through their official, permissioned access, and
+          we don't post anything publicly without you. Sensitive data stays in your systems.</p>
+      </details>
+      <details>
+        <summary>Am I locked into a contract?</summary>
+        <p>Start with the free Leak Audit — no commitment. Paid plans are month-to-month; the goal is
+          to earn the next month by plugging more than it costs.</p>
+      </details>
+      <details>
+        <summary>How fast do I see value?</summary>
+        <p>The audit shows leaks the same week. Speed-to-lead and reminders typically pay for
+          themselves first because they recover money you're already losing.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="audit">
+  <div class="container">
+    <div class="form-wrap">
+      <p class="eyebrow">Free, no commitment</p>
+      <h2>Get your free Revenue Leak Audit.</h2>
+      <p class="lead">Tell us a little about your business and we'll show you — in writing — where
+        you're most likely losing money, and what the AI COO would plug first.</p>
+      <!-- FORM ENDPOINT: replace the action below with your Formspree/Tally endpoint. -->
+      <form class="lead-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+        <input type="hidden" name="interest" value="coo" />
+        <div class="field"><label>Your name</label><input name="name" required placeholder="Jane Owner" /></div>
+        <div class="field"><label>Business name</label><input name="business" required placeholder="Your business" /></div>
+        <div class="field"><label>Type of business</label><input name="vertical" placeholder="Gym, salon, clinic, home services…" /></div>
+        <div class="field">
+          <label>Where's the biggest leak?</label>
+          <select name="biggest_leak">
+            <option value="">Not sure — that's why I'm here</option>
+            <option>Missed calls / slow lead response</option>
+            <option>No-shows &amp; cancellations</option>
+            <option>Members/customers quietly leaving</option>
+            <option>Reviews &amp; reputation</option>
+            <option>Just buried in operations</option>
+          </select>
+        </div>
+        <div class="field full"><label>Email or phone</label><input name="contact" required placeholder="So we can send the audit" /></div>
+        <div class="full"><button class="btn btn-primary btn-lg" type="submit">Send me the audit</button></div>
+      </form>
+      <p class="form-note">We'll only use this to send your audit and follow up. No spam, ever.</p>
+      <div class="form-thanks">Thanks — your audit request is in. We'll be in touch shortly.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="wordmark" href="/">ForLocals<span class="dot-ai">.AI</span></a>
+    <span class="nav-spacer"></span>
+    <div class="footer-links">
+      <a href="/revenue/">Revenue Recovery</a>
+      <a href="/social/">Always-On Content</a>
+      <a href="#audit">Free Leak Audit</a>
+      <a href="/homebase.html">Team homebase</a>
+    </div>
+    <p class="footer-fine">© ForLocals.AI · An AI COO for local businesses. Proven on real operations first.</p>
+  </div>
+</footer>
+
+<script src="/site/marketing.js"></script>
 </body>
 </html>
