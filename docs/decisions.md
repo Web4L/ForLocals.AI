@@ -5,6 +5,27 @@ Re-read this before re-opening a settled question.
 
 ## 2026-06-09
 
+### Team homebase is de-linked from marketing, not deleted
+
+- **The internal team homebase (`/homebase.html`) is no longer linked from the public
+  marketing site.** It stays in the repo and fully public **by direct URL only** — the
+  marketing footer link was removed from all 3 pages. Rationale: prospects shouldn't be able
+  to click from the sales site into the team's operations hub. Interim state until real auth
+  lands (Vercel+Clerk / Cloudflare Access), which remains the eventual gate. *(Decided)*
+
+### Client vs. Prospect is a homebase-tier distinction
+
+- **Businesses are split into two tiers on the homebase: Clients (paying) and Prospects
+  (warm-outreach previews), surfaced as in-page tabs.** The distinction lives in the
+  `homebase.html` registry as two arrays (`CLIENTS`, `PROSPECTS`) — **not** a new field in
+  `business.json`, keeping the "registry is the only thing to update" pattern intact and
+  `business.json` brand-agnostic. Prospect cards are visually flagged (dashed border +
+  "Prospect · Preview" pill). BL918AUTO moved from fully-unlisted to listed under the
+  Prospects tab. *(Decided)*
+- **Tradeoff accepted:** because the homebase is public-but-unlinked, anyone with its direct
+  URL can now see the prospect list. Acceptable until auth lands; prospect dashboards were
+  already reachable by direct URL. *(Noted)*
+
 ### Momentum: live operational homebase vs. frozen demo for social proof
 
 - **The showcase and the working tool are now separate artifacts.** The public
