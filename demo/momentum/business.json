@@ -1,0 +1,27 @@
+{
+  "id": "momentum-fitness",
+  "name": "Momentum Fitness",
+  "location": "Pantego, TX",
+  "enabledApps": ["coo-briefing", "social-media", "newsletter"],
+  "appConfig": {
+    "coo-briefing": {
+      "status": "ready",
+      "dashboard": "apps/coo-briefing/index.html",
+      "focus": "Daily 'what needs you today' brief from MindBody + GoHighLevel",
+      "phase": "COO OS · Phase 1",
+      "dataSource": "demo"
+    },
+    "social-media": {
+      "status": "ready",
+      "dashboard": "apps/social-media/index.html",
+      "focus": "Drive qualified leads into Physics 101",
+      "platforms": ["Instagram", "TikTok", "Facebook"]
+    },
+    "newsletter": {
+      "status": "ready",
+      "dashboard": "apps/newsletter/index.html",
+      "focus": "Nurture leads into Physics 101 and retain members",
+      "cadence": "Monthly"
+    }
+  }
+}

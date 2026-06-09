@@ -2,6 +2,57 @@
 
 Running log of what's been built. Newest at top.
 
+## 2026-06-09
+
+### Built
+- **Split Momentum into a live operational homebase + a frozen, curated demo for
+  social proof.** The public marketing site was using Momentum's *live, evolving*
+  dashboards as its proof — so prospects saw "sample data until the pipeline lands"
+  disclaimers and bracketed placeholders, and any edit to Momentum's real tool
+  changed the showcase. Decoupled the two:
+  - **New frozen demo at `demo/momentum/`** — a full copy of
+    `businesses/momentum-fitness/` placed at the **same folder depth**, so every
+    relative path (slug-agnostic landing page, the `../../../../dashboard/` shared
+    renderer, `../../brand/`, manifest content) resolves with **zero edits**. App
+    shells verified byte-identical to the canonical `dashboard/index.html`. It owns
+    its own copies of all content, so editing the real Momentum dashboards never
+    touches it — **content is frozen; only the rendering engine is shared** (so the
+    demo keeps working and benefits from engine fixes).
+  - **Curated the demo for polish** (demo files only): stripped the COO briefing's
+    "sample data / 0% Automation Coverage / scaffolding" engineering language from
+    its `manifest.json`, `README.md`, and `briefings/latest.md`; replaced the
+    `[Coach Name]` placeholder in both newsletter issues with a real signoff (kept
+    `[First Name]` as a standard merge field); added a subtle, honest **"Demo"** pill
+    + "illustrative product demo" footer to the demo landing page so it's never
+    misread as live client metrics.
+  - **Repointed the 4 marketing proof CTAs** (`index.html`, `social/index.html`,
+    `revenue/index.html`) from `/businesses/momentum-fitness/...` → `/demo/momentum/...`,
+    and dropped the overstated "live" wording.
+  - **Left the live operational homebase untouched** — `businesses/momentum-fitness/`
+    still renders, reachable by direct URL; `homebase.html` (internal team homebase)
+    still points at it. Public/marketing → demo; team + direct URL → live tool. Auth
+    stays deferred (public-but-unlinked).
+  - Verified: inline JS `node --check` (all 4 pages); demo JSON valid; 3/3 demo shells
+    byte-identical; **all demo routes + every manifest-referenced content file + the
+    shared renderer + the repointed CTAs HTTP-200 (0 failures)**; live Momentum still
+    serves. Visual fidelity not screenshot-verifiable here — confirm on live Pages.
+
+### Known gaps / issues (as of 2026-06-09)
+- **Demo is content-frozen but shares the live `/dashboard/` renderer** — a future
+  change to the renderer would change the demo's chrome/behavior (not its content).
+  Acceptable by design; copy `dashboard/` alongside the demo only if a 100%-frozen
+  snapshot is ever needed.
+- **Not deployed** — the demo only goes live on forlocals.ai after a push to `main`
+  (live Pages). Currently on the working branch only.
+- The demo's COO numbers in `briefings/latest.md` remain illustrative sample data
+  (now framed honestly as a demo, not labeled "sample / until pipeline").
+
+### Next steps
+- Deploy to `main` when ready so `/demo/momentum/` is live for cold outreach.
+- Resume the standing thread: positioning reconciliation (AI-COO-first site vs.
+  hook-first GTM) and/or wiring the marketing lead form (placeholder Formspree).
+- COO Morning Briefing → real data remains open for Momentum's *live* tool.
+
 ## 2026-06-08
 
 ### Built — public marketing website

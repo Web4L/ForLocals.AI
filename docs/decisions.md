@@ -3,6 +3,31 @@
 Running log of product, architecture, and strategic decisions. Newest at top.
 Re-read this before re-opening a settled question.
 
+## 2026-06-09
+
+### Momentum: live operational homebase vs. frozen demo for social proof
+
+- **The showcase and the working tool are now separate artifacts.** The public
+  marketing site links to a frozen, curated demo at `demo/momentum/`, not Momentum's
+  live dashboards. The live tool carries honest "sample data / scaffolding" labels and
+  keeps changing as we build; a social-proof showcase must be stable, polished, and
+  on-message. *(Settled)*
+- **The demo is a same-repo, same-depth folder copy** — not a separate repo, subdomain,
+  or host. Keeps the site fully static on GitHub Pages with zero new infra, and same
+  folder depth means every relative path resolves unedited. Subdomain/host move stays
+  deferred. *(Decided)*
+- **Content is frozen; the renderer is shared.** The demo owns its own copies of all
+  content (business.json, brand, manifests, markdown) so editing the live Momentum tool
+  never changes it — but it loads the shared `/dashboard/` renderer so it keeps working
+  and benefits from engine fixes. *(Decided)*
+- **The live operational homebase stays public-but-unlinked.** Reachable by direct URL
+  and from the internal `homebase.html`, but no longer from public marketing. True
+  per-client access control still waits for the deferred Vercel/Cloudflare auth move.
+  *(Settled — consistent with the deferred-auth call.)*
+- **Demo honesty guardrail.** The demo is labeled an "illustrative product demo" and its
+  numbers are sample/illustrative — never presented as real Momentum client metrics.
+  *(Settled)*
+
 ## 2026-06-08
 
 ### Go-to-market / monetization (first GTM decisions)

@@ -1,0 +1,38 @@
+{
+  "tag": "COO OS · Phase 1 · Morning Briefing",
+  "docTitleSuffix": "COO Morning Briefing",
+  "hero": {
+    "eyebrow": "COO Operating System · Phase 1",
+    "title": "What needs you *today*.",
+    "subcopy": "**Momentum Fitness** — Pantego, TX. The daily one-page brief: yesterday's sign-ups, attendance, no-shows, expiring contracts, and sales from **MindBody**, plus new leads, stalled pipeline, and unanswered conversations from **GoHighLevel** — exceptions flagged, action list first."
+  },
+  "stats": [
+    { "n": "1",   "l": "Page / Day" },
+    { "n": "2",   "l": "Systems → 1 View" },
+    { "n": "~5 min",  "l": "Owner Read" },
+    { "n": "Read-only", "l": "Risk Level" }
+  ],
+  "nav": [
+    { "group": "Today", "items": [
+      { "id": "latest", "title": "Today's Briefing", "file": "briefings/latest.md", "pill": "Daily" }
+    ]},
+    { "group": "Start Here", "items": [
+      { "id": "overview", "title": "Overview",        "file": "README.md",            "pill": "Intro" },
+      { "id": "sop",      "title": "Daily Run SOP",   "file": "sop.md",               "pill": "Playbook" },
+      { "id": "template", "title": "Briefing Template","file": "briefing-template.md", "pill": "Structure" }
+    ]},
+    { "group": "Data Contract", "items": [
+      { "id": "schema", "title": "Sheet→JSON Schema", "file": "data/SCHEMA.md", "pill": "Contract" }
+    ]},
+    { "group": "Brand", "items": [
+      { "id": "voice", "title": "Voice & Tone", "file": "../../brand/voice-tone.md", "pill": "Guidelines" }
+    ]},
+    { "group": "Integration", "items": [
+      { "id": "hooks", "title": "MindBody / GHL Hooks", "file": "integration-hooks.md", "pill": "Plumbing" }
+    ]},
+    { "group": "Tools", "items": [
+      { "id": "prompt", "title": "Generation Prompt", "file": "tools/prompt-library.md", "pill": "AI Prompt" }
+    ]}
+  ],
+  "footer": "<b>MOMENTUM FITNESS</b> · COO Morning Briefing &nbsp;·&nbsp; Pantego, TX &nbsp;·&nbsp; Phase 1 of the COO Operating System. Read-only · an illustrative product demo."
+}
