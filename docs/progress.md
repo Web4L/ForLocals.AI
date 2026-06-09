@@ -5,6 +5,19 @@ Running log of what's been built. Newest at top.
 ## 2026-06-09
 
 ### Built
+- **Prospect-preview link audit + relabel of the stale "← Homebase" back link.**
+  Audited every link a prospect could click on the BL918AUTO preview before sending:
+  the app **dashboard** page is fully self-contained (topbar/sidebar are in-page
+  anchors, footer is plain text, zero links in any rendered markdown). The business
+  **landing page** had one escape link — a topbar link labeled "← Homebase" pointing
+  at `../../index.html`, which now resolves to the public **marketing site** (the
+  label predated the marketing site taking over `/`). No internal leak (it never
+  reached `/homebase.html`), just a stale label. Relabeled to **"← ForLocals.AI"**
+  in `businesses/bl918auto/`, `businesses/momentum-fitness/`, and
+  `businesses/_template/` — matching `demo/momentum/`, which was already relabeled
+  during demo curation. Verified: zero "← Homebase" hits repo-wide, all 4 landing
+  pages HTTP-200.
+
 - **De-linked the team homebase from marketing + added Clients/Prospects tabs.**
   Two changes so the public marketing site no longer exposes the internal homebase,
   and the homebase becomes the team's single view of both tiers of business:
