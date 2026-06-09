@@ -4,6 +4,58 @@ Running log of what's been built. Newest at top.
 
 ## 2026-06-08
 
+### Built — public marketing website
+- **Public marketing website (v1) — 3 pages, own brand.** Built the first public-facing,
+  prospect-selling site for ForLocals.AI (separate from the internal homebase). Positioning settled
+  in-session across five forks: **ICP** = founder-dependent owner-operators, vertical-agnostic;
+  **model** = ladder (free Leak Audit → revenue-leak bundle → done-with-you AI COO); **hero angle**
+  = "AI COO that runs your business on autopilot"; **lead capture** = no-backend form; **visual** =
+  premium minimal / editorial. Momentum repositioned as the **proof case**, content as the
+  always-on hook (not the headline).
+  - **New brand for ForLocals.AI itself** (only Momentum had one): `site/marketing.css` — premium
+    editorial system, CSS-token themed (deep-evergreen `--accent #1F4D3F`, *Fraunces* serif display
+    + *Inter* body via Google Fonts CDN). Retune knobs documented at top of the file.
+  - **Home** `index.html` (AI COO umbrella + hub): hero, how-it-works (watch→brief→draft→approve),
+    two on-ramp cards → /revenue + /social, offer ladder/pricing, Momentum proof, "why us/moat",
+    FAQ, lead form.
+  - **`/social/index.html`** — Always-On Content play (honest top-of-funnel/bandwidth framing,
+    brand-context differentiator, links to Momentum's live social dashboard).
+  - **`/revenue/index.html`** — Revenue Recovery play (the four leaks → four fixes, research stats,
+    bundle pricing, Momentum churn/COO proof). Clean `/social` + `/revenue` URLs via folder
+    `index.html` (no router/build).
+  - **Shared chrome** across all 3 (sticky nav, footer, reusable Leak-Audit form) + tiny
+    `site/marketing.js` (mobile nav toggle + AJAX form→thanks). Each form carries a hidden
+    `interest` field (`coo`/`social`/`revenue`) so leads are tagged by play.
+  - **Site restructure:** new marketing `index.html` is the front door; old homebase **renamed at
+    root** to `homebase.html` (paths untouched → its data still loads), linked discreetly from the
+    marketing footer ("Team homebase").
+  - **Custom domain wired:** added root `CNAME` = `forlocals.ai`. DNS done at Namecheap (4 A + 4
+    AAAA + `www` CNAME → web4l.github.io) and Pages custom-domain set to forlocals.ai. Pages reads
+    `CNAME` only on **main**, so the domain goes live when we deploy there. Site uses root-relative
+    paths (`/site/...`, `/businesses/...`) — correct on the apex root, **but breaks on the
+    `web4l.github.io/ForLocals.AI/` project URL**, so preview only on the apex domain after go-live.
+  - Verified: `node --check` on the JS; **14/14** routes/assets HTTP-200 (`/`, `/social/`,
+    `/revenue/`, CSS, JS, `CNAME`, `homebase.html` + its JSON deps, all 3 Momentum proof links).
+
+### Known gaps — marketing website
+- **Form endpoint is a placeholder** — every Leak-Audit form posts to
+  `https://formspree.io/f/REPLACE_WITH_FORM_ID`; the JS shows the "thanks" state locally but
+  **no lead is delivered** until a real Formspree/Tally endpoint is pasted into all three pages.
+- **Pricing is a placeholder token** — bundle shows `$399/mo` (within the $300–500 incumbent band);
+  confirm the real figure (marked with a comment in each file).
+- **Not live yet** — "running" on forlocals.ai requires a push to **main** (live Pages); held for
+  explicit go-ahead. Currently on the `claude/*` working branch only.
+- Accent hex + serif are defaults; one-line retune in `site/marketing.css` if desired.
+- No ForLocals.AI logo asset yet (CSS wordmark used). Site still fully public (auth deferred).
+- **Positioning divergence to reconcile:** the site leads with the AI-COO / revenue angle, while the
+  same-day GTM playbook (`docs/strategy/go-to-market.md`) leads with the $99 free-social hook and
+  defers texting / revenue-leak to expansion. User chose to **deploy as-is and reconcile after**.
+
+### Next steps — marketing website
+- **Wire the lead form** (replace the placeholder Formspree endpoint in all 3 pages) + set the
+  final bundle price (currently `$399/mo` placeholder).
+- **Reconcile** the site's AI-COO-first hero with the GTM playbook's hook-first motion.
+
 ### Built
 - **First real prospect — BL918AUTO (Tulsa) warm-tier dashboard preview.** Ran the
   GTM kit end-to-end on a live prospect: **BL918AUTO** (= B&L Muffler & Brake, a
@@ -71,57 +123,6 @@ Running log of what's been built. Newest at top.
   offer #2 (also no-texting / public-data).
 - COO Morning Briefing → real data (the pre-existing Phase 1 next step) remains
   open whenever the focus shifts back to Momentum ops.
-### Built — public marketing website (same day)
-- **Public marketing website (v1) — 3 pages, own brand.** Built the first public-facing,
-  prospect-selling site for ForLocals.AI (separate from the internal homebase). Positioning settled
-  in-session across five forks: **ICP** = founder-dependent owner-operators, vertical-agnostic;
-  **model** = ladder (free Leak Audit → revenue-leak bundle → done-with-you AI COO); **hero angle**
-  = "AI COO that runs your business on autopilot"; **lead capture** = no-backend form; **visual** =
-  premium minimal / editorial. Momentum repositioned as the **proof case**, content as the
-  always-on hook (not the headline).
-  - **New brand for ForLocals.AI itself** (only Momentum had one): `site/marketing.css` — premium
-    editorial system, CSS-token themed (deep-evergreen `--accent #1F4D3F`, *Fraunces* serif display
-    + *Inter* body via Google Fonts CDN). Retune knobs documented at top of the file.
-  - **Home** `index.html` (AI COO umbrella + hub): hero, how-it-works (watch→brief→draft→approve),
-    two on-ramp cards → /revenue + /social, offer ladder/pricing, Momentum proof, "why us/moat",
-    FAQ, lead form.
-  - **`/social/index.html`** — Always-On Content play (honest top-of-funnel/bandwidth framing,
-    brand-context differentiator, links to Momentum's live social dashboard).
-  - **`/revenue/index.html`** — Revenue Recovery play (the four leaks → four fixes, research stats,
-    bundle pricing, Momentum churn/COO proof). Clean `/social` + `/revenue` URLs via folder
-    `index.html` (no router/build).
-  - **Shared chrome** across all 3 (sticky nav, footer, reusable Leak-Audit form) + tiny
-    `site/marketing.js` (mobile nav toggle + AJAX form→thanks). Each form carries a hidden
-    `interest` field (`coo`/`social`/`revenue`) so leads are tagged by play.
-  - **Site restructure:** new marketing `index.html` is the front door; old homebase **renamed at
-    root** to `homebase.html` (paths untouched → its data still loads), linked discreetly from the
-    marketing footer ("Team homebase").
-  - **Custom domain wired:** added root `CNAME` = `forlocals.ai`. DNS done at Namecheap (4 A + 4
-    AAAA + `www` CNAME → web4l.github.io) and Pages custom-domain set to forlocals.ai. Pages reads
-    `CNAME` only on **main**, so the domain goes live when we deploy there. Site uses root-relative
-    paths (`/site/...`, `/businesses/...`) — correct on the apex root, **but breaks on the
-    `web4l.github.io/ForLocals.AI/` project URL**, so preview only on the apex domain after go-live.
-  - Verified: `node --check` on the JS; **14/14** routes/assets HTTP-200 (`/`, `/social/`,
-    `/revenue/`, CSS, JS, `CNAME`, `homebase.html` + its JSON deps, all 3 Momentum proof links).
-
-### Known gaps — marketing website
-- **Form endpoint is a placeholder** — every Leak-Audit form posts to
-  `https://formspree.io/f/REPLACE_WITH_FORM_ID`; the JS shows the "thanks" state locally but
-  **no lead is delivered** until a real Formspree/Tally endpoint is pasted into all three pages.
-- **Pricing is a placeholder token** — bundle shows `$399/mo` (within the $300–500 incumbent band);
-  confirm the real figure (marked with a comment in each file).
-- **Not live yet** — "running" on forlocals.ai requires a push to **main** (live Pages); held for
-  explicit go-ahead. Currently on the `claude/*` working branch only.
-- Accent hex + serif are defaults; one-line retune in `site/marketing.css` if desired.
-- No ForLocals.AI logo asset yet (CSS wordmark used). Site still fully public (auth deferred).
-- **Positioning divergence to reconcile:** the site leads with the AI-COO / revenue angle, while the
-  same-day GTM playbook (`docs/strategy/go-to-market.md`) leads with the $99 free-social hook and
-  defers texting / revenue-leak to expansion. User chose to **deploy as-is and reconcile after**.
-
-### Next steps — marketing website
-- **Wire the lead form** (replace the placeholder Formspree endpoint in all 3 pages) + set the
-  final bundle price (currently `$399/mo` placeholder).
-- **Reconcile** the site's AI-COO-first hero with the GTM playbook's hook-first motion.
 
 ## 2026-06-04
 
