@@ -5,6 +5,25 @@ Running log of what's been built. Newest at top.
 ## 2026-06-09
 
 ### Built
+- **De-linked the team homebase from marketing + added Clients/Prospects tabs.**
+  Two changes so the public marketing site no longer exposes the internal homebase,
+  and the homebase becomes the team's single view of both tiers of business:
+  - **Removed the "Team homebase" footer link** from all 3 marketing pages
+    (`index.html`, `social/index.html`, `revenue/index.html`) — it was the only
+    reference. `/homebase.html` stays public **but unlinked** (direct-URL only;
+    auth still deferred).
+  - **Clients / Prospects in-page tabs in `homebase.html`.** Split the flat
+    `BUSINESSES` registry into `CLIENTS = ["momentum-fitness"]` (paying) and
+    `PROSPECTS = ["bl918auto"]` (warm-outreach previews). Generalized the old
+    `loadBusinesses()` into a reusable `renderBusinesses(list, container, isProspect)`;
+    prospect cards get a dashed-border treatment + a "Prospect · Preview" pill and an
+    "Open preview →" CTA. Tabs default to Clients; App Catalog stays shared below.
+    Hero metrics now read Clients / Prospects / Automations. No `business.json`, brand,
+    or demo files changed; stays on the "registries are the only thing to update" pattern.
+  - Verified: `node --check` on homebase inline JS; zero residual `homebase.html` refs in
+    marketing pages; all routes HTTP-200 (homebase, 3 marketing pages, Momentum client +
+    BL918AUTO prospect landing + dashboard). Visual fidelity confirm on live Pages.
+
 - **Split Momentum into a live operational homebase + a frozen, curated demo for
   social proof.** The public marketing site was using Momentum's *live, evolving*
   dashboards as its proof — so prospects saw "sample data until the pipeline lands"

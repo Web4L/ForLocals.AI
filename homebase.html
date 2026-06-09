@@ -70,6 +70,22 @@
   .badge.ready { color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent); }
   .badge.planned { color:var(--muted); background:rgba(255,255,255,.03); border:1px solid var(--line); }
 
+  /* tabs */
+  .tabs { display:flex; gap:6px; border-bottom:1px solid var(--line); margin:46px 0 22px; }
+  .tab { appearance:none; cursor:pointer; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); background:none; border:none; border-bottom:2px solid transparent; padding:10px 16px; margin-bottom:-1px; transition:color .14s, border-color .14s; }
+  .tab:hover { color:var(--silver-bright); }
+  .tab.active { color:#fff; border-bottom-color:var(--accent); }
+  .tab .count { display:inline-block; margin-left:7px; font-size:10px; font-weight:700; color:var(--muted); background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:999px; padding:1px 7px; vertical-align:middle; }
+  .tab.active .count { color:var(--accent); border-color:var(--accent); }
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; }
+
+  /* prospect flag */
+  .biz.prospect { border-style:dashed; border-color:var(--line); opacity:.96; }
+  .biz.prospect .biz-head { background:linear-gradient(180deg,#0c0c0e,#101013); }
+  .biz.prospect .biz-head::before { opacity:.55; }
+  .prospect-pill { display:inline-block; font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); background:rgba(255,255,255,.03); border:1px dashed var(--line); border-radius:999px; padding:4px 11px; margin-bottom:9px; }
+
   /* catalog */
   .catalog { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
   .cat-card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:15px 16px; }
@@ -108,8 +124,16 @@
       <div class="metrics" id="metrics"></div>
     </section>
 
-    <div class="section-title">Businesses</div>
-    <div id="businesses"><div class="loading">Loading businesses…</div></div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tab-clients" role="tab" aria-controls="panel-clients" aria-selected="true">Clients<span class="count" id="count-clients"></span></button>
+      <button class="tab" id="tab-prospects" role="tab" aria-controls="panel-prospects" aria-selected="false">Prospects<span class="count" id="count-prospects"></span></button>
+    </div>
+    <div class="tab-panel active" id="panel-clients" role="tabpanel" aria-labelledby="tab-clients">
+      <div id="clients-list"><div class="loading">Loading clients…</div></div>
+    </div>
+    <div class="tab-panel" id="panel-prospects" role="tabpanel" aria-labelledby="tab-prospects">
+      <div id="prospects-list"><div class="loading">Loading prospects…</div></div>
+    </div>
 
     <div class="section-title">App Catalog · Available Automations</div>
     <div class="catalog" id="catalog"><div class="loading">Loading catalog…</div></div>
@@ -119,7 +143,8 @@
 
   <script>
     // ---- Registries (the only thing to update when adding businesses/apps) ----
-    const BUSINESSES = ["momentum-fitness"];
+    const CLIENTS   = ["momentum-fitness"]; // paying clients
+    const PROSPECTS = ["bl918auto"];         // warm-outreach previews (unlisted on marketing)
     const APP_CATALOG = ["coo-briefing","social-media","newsletter","blog-seo","review-responder",
       "review-requests","ad-copy","lead-followup","gbp-posts","support-faq","proposals"];
 
@@ -144,8 +169,10 @@
       return APP_CATALOG.length;
     }
 
-    async function loadBusinesses() {
-      const blocks = await Promise.all(BUSINESSES.map(async slug => {
+    async function renderBusinesses(list, containerId, isProspect) {
+      const el = document.getElementById(containerId);
+      if (!list.length) { el.innerHTML = `<p style="color:var(--muted)">${isProspect?"No prospects yet.":"No clients yet."}</p>`; return 0; }
+      const blocks = await Promise.all(list.map(async slug => {
         try {
           const [biz, brand] = await Promise.all([
             getJSON(`businesses/${slug}/business.json`),
@@ -170,9 +197,10 @@
             </div>`;
           }));
 
-          return `<div class="biz" style="--accent:${accent};--accent-soft:${accent}22;">
+          return `<div class="biz${isProspect?" prospect":""}" style="--accent:${accent};--accent-soft:${accent}22;">
             <div class="biz-head">
-              <a class="biz-link" href="businesses/${slug}/">Open homebase →</a>
+              <a class="biz-link" href="businesses/${slug}/">Open ${isProspect?"preview":"homebase"} →</a>
+              ${isProspect?`<span class="prospect-pill">Prospect · Preview</span><br>`:""}
               <div class="loc">${esc(biz.location||"")}</div>
               <h2><a href="businesses/${slug}/">${esc(biz.name||slug)}</a></h2>
               <p class="tagline">${esc((brand&&brand.tagline)||(brand&&brand.positioning)||"")}</p>
@@ -184,14 +212,39 @@
           return `<div class="biz"><div class="biz-head"><h2>${esc(slug)}</h2><p class="tagline err">Couldn't load business.json (${e.message}). Serve this over HTTP (GitHub Pages), not from disk.</p></div></div>`;
         }
       }));
-      document.getElementById("businesses").innerHTML = blocks.join("");
-      return BUSINESSES.length;
+      el.innerHTML = blocks.join("");
+      return list.length;
+    }
+
+    function setupTabs() {
+      const tabs = [
+        { btn:"tab-clients",   panel:"panel-clients" },
+        { btn:"tab-prospects", panel:"panel-prospects" }
+      ];
+      tabs.forEach(({btn,panel}) => {
+        document.getElementById(btn).addEventListener("click", () => {
+          tabs.forEach(t => {
+            const active = t.btn === btn;
+            document.getElementById(t.btn).classList.toggle("active", active);
+            document.getElementById(t.btn).setAttribute("aria-selected", active);
+            document.getElementById(t.panel).classList.toggle("active", active);
+          });
+        });
+      });
     }
 
     (async () => {
-      const [nApps, nBiz] = await Promise.all([loadCatalog(), loadBusinesses()]);
+      setupTabs();
+      const [nApps, nClients, nProspects] = await Promise.all([
+        loadCatalog(),
+        renderBusinesses(CLIENTS,   "clients-list",   false),
+        renderBusinesses(PROSPECTS, "prospects-list", true)
+      ]);
+      document.getElementById("count-clients").textContent = nClients;
+      document.getElementById("count-prospects").textContent = nProspects;
       document.getElementById("metrics").innerHTML = `
-        <div class="metric"><b>${nBiz}</b><span>Businesses</span></div>
+        <div class="metric"><b>${nClients}</b><span>Clients</span></div>
+        <div class="metric"><b>${nProspects}</b><span>Prospects</span></div>
         <div class="metric"><b>${nApps}</b><span>Automations</span></div>`;
     })();
   </script>
