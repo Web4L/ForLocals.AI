@@ -85,6 +85,9 @@ Running log of what's been built. Newest at top.
 
 ### Next steps
 - ✅ Deployed to `main` — `/demo/momentum/` is live for cold outreach.
+- **⏰ 2026-06-12 — follow up with BL918AUTO** if no reply to the first DM (sent
+  2026-06-09). One follow-up only; lean on the June 20 Open House urgency. Full
+  context + the follow-up DM text: `docs/strategy/outreach/follow-ups.md`.
 - Resume the standing thread: positioning reconciliation (AI-COO-first site vs.
   hook-first GTM) and/or wiring the marketing lead form (placeholder Formspree).
 - COO Morning Briefing → real data remains open for Momentum's *live* tool.
