@@ -42,13 +42,17 @@ Running log of what's been built. Newest at top.
   change to the renderer would change the demo's chrome/behavior (not its content).
   Acceptable by design; copy `dashboard/` alongside the demo only if a 100%-frozen
   snapshot is ever needed.
-- **Not deployed** — the demo only goes live on forlocals.ai after a push to `main`
-  (live Pages). Currently on the working branch only.
+- **Deployed** — `demo/momentum/` is live on `main` (confirmed 2026-06-09: `origin/main`
+  is at the demo-split commit `f5663f7`, `demo/` tree present, `CNAME` → forlocals.ai,
+  `.nojekyll` present). Live at `https://forlocals.ai/demo/momentum/`. *(This bullet
+  originally read "Not deployed — working branch only"; that was written inside the commit
+  before it reached `main`. A later push deployed it; corrected here so `/new-session`
+  doesn't re-flag it as undeployed.)*
 - The demo's COO numbers in `briefings/latest.md` remain illustrative sample data
   (now framed honestly as a demo, not labeled "sample / until pipeline").
 
 ### Next steps
-- Deploy to `main` when ready so `/demo/momentum/` is live for cold outreach.
+- ✅ Deployed to `main` — `/demo/momentum/` is live for cold outreach.
 - Resume the standing thread: positioning reconciliation (AI-COO-first site vs.
   hook-first GTM) and/or wiring the marketing lead form (placeholder Formspree).
 - COO Morning Briefing → real data remains open for Momentum's *live* tool.
