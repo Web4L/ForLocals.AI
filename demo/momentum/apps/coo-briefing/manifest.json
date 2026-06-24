@@ -22,7 +22,7 @@
       { "id": "template", "title": "Briefing Template","file": "briefing-template.md", "pill": "Structure" }
     ]},
     { "group": "Data Contract", "items": [
-      { "id": "schema", "title": "Sheet→JSON Schema", "file": "data/SCHEMA.md", "pill": "Contract" }
+      { "id": "schema", "title": "Data the Briefing Reads", "file": "data/SCHEMA.md", "pill": "Contract" }
     ]},
     { "group": "Brand", "items": [
       { "id": "voice", "title": "Voice & Tone", "file": "../../brand/voice-tone.md", "pill": "Guidelines" }

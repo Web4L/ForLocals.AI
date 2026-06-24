@@ -1,8 +1,8 @@
 # COO Morning Briefing — Integration Hooks (MindBody ↔ GHL)
 
 How this app plugs into the Momentum COO OS. It is **Phase 1** and **read-only** —
-it consumes data from both systems and writes to neither. See
-`docs/strategy/momentum-coo-os.md` and the data contract in `data/SCHEMA.md`.
+it consumes data from both systems and writes to neither. The data it reads
+follows the standard data contract.
 
 ## Source of truth
 - **MindBody** owns member/operations truth (sign-ups, attendance, contracts,
@@ -25,10 +25,9 @@ From **GoHighLevel** (v2 / LeadConnector):
 - Inbound messages with no reply → `ghl.unansweredConversations`
 
 ## Reconciliation dependency
-- Webhook events are **not stored** — a daily scheduled reconciliation sync
-  (spec §2.1 / §5.4) is what guarantees the export is complete. Until that exists,
-  the Mini-Phase 0.5 manual Sheet export is the stand-in, flagged via
-  `meta.source`.
+- Webhook events are **not stored** — a daily scheduled reconciliation sync is
+  what guarantees the export is complete. Until that exists, the Mini-Phase 0.5
+  manual Sheet export is the stand-in, flagged via its data source.
 
 ## Phase map / hand-offs
 - Surfaces signals the later phases act on: expiring/at-risk → **Phase 2**
@@ -38,5 +37,5 @@ From **GoHighLevel** (v2 / LeadConnector):
   write-enabled phases, always behind a human-approve gate.
 
 ## Status
-**Scaffolded on sample data.** Wire the real reads after Phase 0 credentials +
+**Built on sample data.** Wire the real reads after Phase 0 credentials +
 the Mini-Phase 0.5 export land. No write paths — nothing to sandbox-test here.

@@ -1,9 +1,9 @@
 # ☀️ Morning Briefing — Wed, June 4, 2026
 *Data for 2026-06-03 · source: **sample** · generated 2026-06-04 06:00 CT*
 
-> ⚠️ **This is a sample brief** rendered from `data/briefing-sample.json` to show
-> the format. The numbers are illustrative, not real Momentum data. It swaps to
-> live content once the Mini-Phase 0.5 Sheet→JSON export is wired (see Overview).
+> ⚠️ **This is a sample brief** rendered from sample data to show the format. The
+> numbers are illustrative, not real Momentum data. It swaps to live content once
+> the Mini-Phase 0.5 Google Sheet export is wired (see Overview).
 
 ### 🔴 Needs you today
 

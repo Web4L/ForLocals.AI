@@ -2,6 +2,24 @@
 
 Running log of what's been built. Newest at top.
 
+## 2026-06-24
+
+### Built
+- **De-jargoned the Momentum COO OS dashboard copy.** Stripped every mention of
+  repo files (`.md`/`.json` paths, `data/SCHEMA.md`, `briefings/latest.md`,
+  `tools/prompt-library.md`, `brand/voice-tone.md`, `docs/strategy/…`, `src/`) and
+  obvious dev jargon (rendering-mechanics talk of "markdown/JSON", "the repo is
+  public", "scaffolded", spec `§` refs, the "Sheet→JSON Schema" nav title) from the
+  COO Morning Briefing's reader-facing copy — so a gym owner reads plain English,
+  not plumbing. All other wording unchanged. Light/surgical scope: kept real data
+  field names and the MindBody/GHL/JSON terms that genuinely describe the data
+  contract. Applied to **both** copies — live `businesses/momentum-fitness/apps/coo-briefing/`
+  and the `demo/momentum/apps/coo-briefing/` mirror (edited per-file since the demo
+  text had already diverged). Functional `manifest.json` `"file"` fetch paths and the
+  invisible developer HTML comments in `index.html` were intentionally left as-is.
+  Verified: zero leftover file/jargon mentions in rendered copy, both `manifest.json`
+  files still valid JSON, all dashboard routes HTTP-200.
+
 ## 2026-06-09
 
 ### Built

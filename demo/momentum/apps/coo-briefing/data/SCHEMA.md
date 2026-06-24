@@ -1,13 +1,12 @@
-# Briefing Data Contract (Sheet→JSON / API)
+# Briefing Data Contract
 
 The fixed shape the Morning Briefing reads. **This is the source of truth for
 the export's structure** — the Mini-Phase 0.5 Google Sheet export and the later
-MindBody/GHL API export must both produce this shape, so the generation prompt
-never changes when the data source upgrades. Reference sample:
-[`briefing-sample.json`](briefing-sample.json).
+MindBody/GHL export must both produce this shape, so the generation prompt
+never changes when the data source upgrades.
 
-> One file = one day. Name dated copies `briefing-YYYY-MM-DD.json`. The
-> generator reads whichever file the SOP points it at.
+> One day's data = one export. Keep a dated copy for each day; the generator
+> reads whichever one the SOP points it at.
 
 ## `meta` (required)
 | Field | Type | Notes |
@@ -56,7 +55,7 @@ never changes when the data source upgrades. Reference sample:
 - **Empty array ≠ missing feed.** If a feed failed, omit the key and add a
   `meta.note` so the brief flags "no data" rather than implying zero.
 - **Privacy:** initials or first-name + last-initial; never PII beyond what the
-  brief needs. The repo is currently public (auth deferred).
+  brief needs.
 - **MindBody is truth.** Where MindBody and GHL describe the same person/number
   and disagree, the brief flags it for reconciliation; it does not auto-resolve.
 - **Additive evolution.** New fields are added, not renamed — so the prompt and
