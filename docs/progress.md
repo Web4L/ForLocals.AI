@@ -2,7 +2,7 @@
 
 Running log of what's been built. Newest at top.
 
-## 2026-06-24
+## 2026-06-25
 
 ### Built
 - **De-jargoned the Momentum COO OS dashboard copy.** Stripped every mention of
