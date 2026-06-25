@@ -5,6 +5,14 @@ Running log of what's been built. Newest at top.
 ## 2026-06-25
 
 ### Built
+- **Removed the top-left "← ForLocals.AI" back link from the Momentum homebase.**
+  Deleted the `<a class="back">` topbar link on `businesses/momentum-fitness/index.html`
+  and the `demo/momentum/index.html` mirror, so the Momentum landing pages no longer
+  link up to the site root. The right-side `ForLocals.AI` wordmark (a non-clickable
+  span) stays; the `spacer` keeps it pinned right exactly as before. `businesses/_template/`
+  and `businesses/bl918auto/` keep their back link unchanged. Verified: zero `class="back"`
+  in the two Momentum files, both pages HTTP-200, one-line diff each.
+
 - **De-jargoned the Momentum COO OS dashboard copy.** Stripped every mention of
   repo files (`.md`/`.json` paths, `data/SCHEMA.md`, `briefings/latest.md`,
   `tools/prompt-library.md`, `brand/voice-tone.md`, `docs/strategy/…`, `src/`) and
