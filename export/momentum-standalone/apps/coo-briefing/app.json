@@ -1,0 +1,9 @@
+{
+  "id": "coo-briefing",
+  "name": "COO Morning Briefing",
+  "category": "Operations",
+  "description": "A daily one-page 'what needs you today' brief — synthesizes the system-of-record (MindBody) and engagement engine (GoHighLevel) into sign-ups, attendance, no-shows, expiring contracts, sales, new leads, stalled pipeline, and unanswered conversations, with exceptions flagged.",
+  "status": "ready",
+  "requiredContext": ["brand", "voice"],
+  "outputs": ["daily morning briefing", "exception flags", "action list", "weekly rollup"]
+}

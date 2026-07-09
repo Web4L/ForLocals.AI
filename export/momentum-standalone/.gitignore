@@ -1,0 +1,13 @@
+# Secrets — never commit real credentials. Fill integrations/.env.example → .env locally
+# or set env vars in Vercel project settings.
+.env
+.env.local
+*.env
+!.env.example
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+node_modules/

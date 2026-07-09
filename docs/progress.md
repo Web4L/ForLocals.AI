@@ -2,6 +2,32 @@
 
 Running log of what's been built. Newest at top.
 
+## 2026-07-09
+
+### Built
+- **Staged the standalone Momentum COO OS export at `export/momentum-standalone/`** —
+  a complete, self-contained copy of Momentum's operation, ready to be dropped into
+  Momentum's own GitHub account and deployed on their own Vercel account. Contents:
+  everything from `businesses/momentum-fitness/` promoted to the repo root (their
+  homebase becomes the root `index.html`), the shared `dashboard/` renderer, the
+  `integrations/` credentials template (`.env.example` — the GHL/MindBody keys are
+  Momentum's own and go in *their* Vercel env vars), the COO OS runbook
+  (`docs/momentum-coo-os.md`), each enabled app's `app.json` catalog metadata and
+  operable prompts, plus a fresh client-facing `README.md`, `.gitignore`, and
+  `.nojekyll`. Path rewrites for the new depth: app shells now load
+  `../../dashboard/…` (was `../../../../`), homebase fetches `./apps/<slug>/app.json`
+  (was `../../apps/…`); the renderer's `../../brand/` refs are depth-identical so
+  they needed no change. Nothing in the live site was touched — this is a pure copy.
+  Verified: local HTTP server, **HTTP-200 on all 4 pages and all 31 manifest-fetched
+  files**, `node --check` on the renderer and the homebase inline JS, zero stale
+  cross-repo paths in html/json/js.
+
+### Next step
+- Owner creates Momentum's GitHub repo, copies `export/momentum-standalone/` contents
+  into it (their Claude can do this — the folder is the repo, verbatim), then imports
+  it into a new Vercel account (framework preset "Other", no build command). Once
+  handed off, `export/` can be deleted from this repo.
+
 ## 2026-06-25
 
 ### Built

@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "businessId": "momentum-fitness",
+    "date": "2026-06-03",
+    "generatedAt": "2026-06-04T06:00:00-05:00",
+    "source": "sample",
+    "env": "sample",
+    "note": "ILLUSTRATIVE sample data — not real Momentum numbers. Replaced by the Mini-Phase 0.5 Sheet export, then by the MindBody/GHL API export of the same shape."
+  },
+  "mindbody": {
+    "signups": [
+      { "name": "Jordan R.", "membership": "Physics 101", "source": "Instagram" },
+      { "name": "Mia T.", "membership": "Month-to-Month", "source": "Referral" }
+    ],
+    "attendance": { "visitsYesterday": 84, "classesRun": 9, "avgFillRate": 0.78, "baselineFillRate": 0.82 },
+    "noShows": [
+      { "client": "Devon K.", "class": "6:00a Strength", "time": "2026-06-03T06:00:00-05:00" }
+    ],
+    "cancellations": [
+      { "client": "Priya S.", "class": "5:30p Conditioning", "reason": "late cancel" }
+    ],
+    "expiringContracts": [
+      { "client": "Marcus L.", "plan": "12-mo Commit", "expires": "2026-06-09", "autoRenew": false },
+      { "client": "Ana V.", "plan": "6-mo Commit", "expires": "2026-06-11", "autoRenew": true }
+    ],
+    "sales": { "grossYesterday": 1240.00, "transactions": 7, "topItem": "Physics 101", "currency": "USD" }
+  },
+  "ghl": {
+    "newLeads": [
+      { "name": "Chris P.", "source": "Physics 101 LP", "capturedAt": "2026-06-03T14:22:00-05:00", "stage": "New" },
+      { "name": "Taylor M.", "source": "Google", "capturedAt": "2026-06-03T19:05:00-05:00", "stage": "New" },
+      { "name": "Sam W.", "source": "Physics 101 LP", "capturedAt": "2026-06-03T20:41:00-05:00", "stage": "New" }
+    ],
+    "stalledPipeline": [
+      { "name": "Riley D.", "stage": "Booked Intro", "daysInStage": 6, "value": 1188.00 }
+    ],
+    "unansweredConversations": [
+      { "name": "Chris P.", "channel": "SMS", "waitingHours": 14, "lastMessage": "is the 6am class beginner friendly?" }
+    ]
+  }
+}

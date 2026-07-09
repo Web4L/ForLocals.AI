@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — ForLocals.AI</title>
+<meta name="description" content="App dashboard rendered live from the repository." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../../dashboard/app-dashboard.css" />
+</head>
+<body>
+  <!-- ForLocals.AI shared app dashboard. This shell is identical for every business + app;
+       all content comes from ./manifest.json and ../../brand/brand.json (see
+       /dashboard/app-dashboard.js). Do not add per-app markup here — edit manifest.json. -->
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+    <a class="brandmark" id="brandmark" href="#overview" aria-label="Dashboard"></a>
+    <span class="spacer"></span>
+    <span class="tag" id="tag"></span>
+  </header>
+
+  <div class="shell">
+    <nav class="side" id="sidenav"><!-- nav injected --></nav>
+    <main>
+      <div class="hero">
+        <div class="awards" id="awards"></div>
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 id="heroTitle"></h1>
+        <div class="rule"></div>
+        <p id="heroSub"></p>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="section-wrap" id="content">
+        <div class="loading">Loading content…</div>
+      </div>
+      <footer id="footer"></footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+  <script src="../../dashboard/app-dashboard.js"></script>
+</body>
+</html>
